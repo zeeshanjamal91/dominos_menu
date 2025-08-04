@@ -4,6 +4,7 @@ import CategoryPage from './components/CategoryPage';
 import PizzaDetailPage from './components/PizzaDetailPage';
 import DrinksDetailPage from './components/DrinksDetailPage';
 import DippingCupsDetailPage from './components/DippingCupsDetailPage';
+import NotFoundPage from './components/NotFoundPage';
 
 function App() {
   const menuCategories = [
@@ -215,6 +216,7 @@ function App() {
           path="/dipping-cups" 
           element={<DippingCupsDetailPage categories={menuCategories.map(cat => ({ name: cat.name, slug: cat.slug }))} />} 
         />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>
   );
