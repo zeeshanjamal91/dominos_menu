@@ -415,6 +415,39 @@ export default function CategoryPage({ categories }: CategoryPageProps) {
         </div>
       </div>
 
+      {/* Build Your Own Pizza Section - Only for Specialty Pizzas */}
+      {category.slug === 'specialty-pizzas' && (
+        <div className="py-4 px-3">
+          <div className="bg-white rounded-lg shadow-md transition-shadow duration-200 overflow-hidden border border-gray-100">
+            <div className="p-4">
+              <div className="flex items-start space-x-3 mb-3">
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-lg font-bold text-cyan-700 leading-tight mb-3">Build Your Own Pizza</h3>
+                  <div className="grid grid-cols-2 gap-2 text-sm">
+                    <div className="flex items-center">
+                      <span className="text-cyan-700 font-semibold underline">Parmesan Stuffed Crust</span>
+                      <span className="ml-2 bg-red-500 text-white text-xs px-1.5 py-0.5 rounded font-bold">NEW!</span>
+                    </div>
+                    <div className="text-cyan-700 font-semibold underline">Hand Tossed</div>
+                    <div className="text-cyan-700 font-semibold underline">Handmade Pan</div>
+                    <div className="text-cyan-700 font-semibold underline">Crunchy Thin Crust</div>
+                    <div className="text-cyan-700 font-semibold underline">Gluten Free Crust</div>
+                    <div className="text-cyan-700 font-semibold underline">New York Style</div>
+                  </div>
+                </div>
+                <div className="flex-shrink-0">
+                  <img 
+                    src="/images/pizzas/build.png"
+                    alt="Build Your Own Pizza"
+                    className="w-20 h-20 object-contain rounded-lg"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Menu Items */}
       <main className="py-4 px-3 pb-8">
         <div className="space-y-4">
