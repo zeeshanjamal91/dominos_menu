@@ -5,6 +5,7 @@ import PizzaDetailPage from './components/PizzaDetailPage';
 import DrinksDetailPage from './components/DrinksDetailPage';
 import DippingCupsDetailPage from './components/DippingCupsDetailPage';
 import NotFoundPage from './components/NotFoundPage';
+import BuildYourOwnPizzaPage from './components/BuildYourOwnPizzaPage';
 
 function App() {
   const menuCategories = [
@@ -215,6 +216,10 @@ function App() {
         <Route 
           path="/dipping-cups" 
           element={<DippingCupsDetailPage categories={menuCategories.map(cat => ({ name: cat.name, slug: cat.slug }))} />} 
+        />
+        <Route 
+          path="/build-your-own-pizza" 
+          element={<BuildYourOwnPizzaPage categories={menuCategories.map(cat => ({ name: cat.name, slug: cat.slug }))} />} 
         />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
