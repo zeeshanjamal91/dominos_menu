@@ -67,28 +67,29 @@ export default function BuildYourOwnPizzaPage({ categories }: BuildYourOwnPizzaP
     }
   };
 
-  const sauceOptions = [
-    { name: "Robust Inspired Tomato Sauce", type: "Light", selected: true },
-    { name: "Robust Inspired Tomato Sauce", type: "Normal", selected: false },
-    { name: "Robust Inspired Tomato Sauce", type: "Extra", selected: false },
-    { name: "Honey BBQ Sauce", type: "", selected: false },
-    { name: "Garlic Parmesan Sauce", type: "", selected: false },
-    { name: "Alfredo Sauce", type: "", selected: false },
-    { name: "Ranch", type: "", selected: false },
-    { name: "No Sauce", type: "", selected: false }
-  ];
-
   const toppings = [
-    "Ham", "Beef", "Pepperoni", "Italian Sausage", "Premium Chicken", "Bacon", "Philly Steak", 
-    "Anchovies", "Hot Buffalo Sauce", "Jalapeno Peppers", "Onions", "Banana Peppers", 
-    "Diced Tomatoes", "Black Olives", "Mushrooms", "Pineapple", "Shredded Provolone Cheese",
-    "Cheddar Cheese Blend", "Green Peppers", "Spinach", "Feta Cheese", "Shredded Parmesan Asiago"
-  ];
-
-  const dippingCups = [
-    { name: "Ranch Dipping Cup", color: "bg-green-500" },
-    { name: "Garlic Dipping Cup", color: "bg-yellow-500" },
-    { name: "Marinara Dipping Cup", color: "bg-red-500" }
+    { name: "Fresh Mushrooms", calories: "5" },
+    { name: "Fresh Onions", calories: "5–10" },
+    { name: "Black Olives", calories: "10–35" },
+    { name: "Jalapenos", calories: "0–5" },
+    { name: "Fresh Green Peppers", calories: "0–5" },
+    { name: "Roasted Red Peppers", calories: "0–5" },
+    { name: "Banana Peppers", calories: "0–5" },
+    { name: "Diced Tomatoes", calories: "0–5" },
+    { name: "Fresh Spinach", calories: "0–5" },
+    { name: "Pepperoni", calories: "25–70" },
+    { name: "Bacon", calories: "45–100" },
+    { name: "Ham", calories: "10–25" },
+    { name: "Beef", calories: "35–100" },
+    { name: "Premium Chicken", calories: "20–45" },
+    { name: "Italian Sausage", calories: "45–120" },
+    { name: "Philly Steak", calories: "15–35" },
+    { name: "Pineapple", calories: "10–20" },
+    { name: "Cheddar Cheese", calories: "15–60" },
+    { name: "Shredded Provolone Cheese", calories: "15–60" },
+    { name: "Shredded Parmesan-Asiago", calories: "20–45" },
+    { name: "Feta Cheese", calories: "10–30" },
+    { name: "Hot Buffalo Sauce", calories: "0–5" }
   ];
 
   return (
@@ -239,38 +240,31 @@ export default function BuildYourOwnPizzaPage({ categories }: BuildYourOwnPizzaP
             </div>
           </div>
 
-          {/* Crust Seasoning Section */}
-          <div className="bg-white rounded-lg shadow-md border border-gray-100">
-            <div className="bg-cyan-700 text-white px-4 py-3 rounded-t-lg">
-              <h2 className="text-lg font-bold">2. CRUST SEASONING</h2>
-            </div>
-            <div className="p-4">
-              <div className="space-y-3">
-                <div className="flex items-center">
-                  <div className="w-4 h-4 bg-cyan-700 rounded-full mr-3"></div>
-                  <span className="text-gray-800 font-medium">Garlic Crust Seasoning</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-4 h-4 border-2 border-gray-300 rounded-full mr-3"></div>
-                  <span className="text-gray-600">No Garlic Crust Seasoning</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
           {/* Cheese Section */}
           <div className="bg-white rounded-lg shadow-md border border-gray-100">
             <div className="bg-cyan-700 text-white px-4 py-3 rounded-t-lg">
-              <h2 className="text-lg font-bold">3. CHEESE</h2>
+              <h2 className="text-lg font-bold">2. CHEESE AMOUNT</h2>
             </div>
             <div className="p-4">
-              <div className="flex items-center justify-between mb-4">
-                <span className="font-medium text-gray-800">Cheese</span>
-                <div className="flex space-x-2">
-                  <button className="px-3 py-1 text-sm border border-gray-300 rounded">None</button>
-                  <button className="px-3 py-1 text-sm border border-gray-300 rounded">Light</button>
-                  <button className="px-3 py-1 text-sm bg-cyan-700 text-white rounded">Normal</button>
-                  <button className="px-3 py-1 text-sm border border-gray-300 rounded">Extra</button>
+              <div className="space-y-3">
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="font-semibold text-gray-800 border-b border-gray-300 pb-2">Amount</div>
+                  <div className="font-semibold text-gray-800 border-b border-gray-300 pb-2">Calories</div>
+                  <div className="flex items-center text-gray-700">
+                    <span className="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>
+                    Light
+                  </div>
+                  <div className="text-gray-600">30–140</div>
+                  <div className="flex items-center text-gray-700">
+                    <span className="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>
+                    Normal
+                  </div>
+                  <div className="text-gray-600">45–150</div>
+                  <div className="flex items-center text-gray-700">
+                    <span className="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>
+                    Extra
+                  </div>
+                  <div className="text-gray-600">60–180</div>
                 </div>
               </div>
             </div>
@@ -279,28 +273,39 @@ export default function BuildYourOwnPizzaPage({ categories }: BuildYourOwnPizzaP
           {/* Sauce Section */}
           <div className="bg-white rounded-lg shadow-md border border-gray-100">
             <div className="bg-cyan-700 text-white px-4 py-3 rounded-t-lg">
-              <h2 className="text-lg font-bold">4. SAUCE</h2>
+              <h2 className="text-lg font-bold">3. SAUCE</h2>
             </div>
             <div className="p-4">
               <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center">
-                    <div className="w-4 h-4 bg-cyan-700 rounded-full mr-3"></div>
-                    <span className="text-gray-800">Robust Inspired Tomato Sauce</span>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="font-semibold text-gray-800 border-b border-gray-300 pb-2">Sauce Type</div>
+                  <div className="font-semibold text-gray-800 border-b border-gray-300 pb-2">Calories</div>
+                  <div className="flex items-center text-gray-700">
+                    <span className="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>
+                    Robust Tomato
                   </div>
-                  <div className="flex space-x-1">
-                    <button className="px-2 py-1 text-xs bg-cyan-700 text-white rounded">Light</button>
-                    <button className="px-2 py-1 text-xs border border-gray-300 rounded">Normal</button>
-                    <button className="px-2 py-1 text-xs border border-gray-300 rounded">Extra</button>
+                  <div className="text-gray-600">5–20</div>
+                  <div className="flex items-center text-gray-700">
+                    <span className="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>
+                    Honey BBQ
                   </div>
+                  <div className="text-gray-600">15–40</div>
+                  <div className="flex items-center text-gray-700">
+                    <span className="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>
+                    Alfredo
+                  </div>
+                  <div className="text-gray-600">15–60</div>
+                  <div className="flex items-center text-gray-700">
+                    <span className="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>
+                    Ranch
+                  </div>
+                  <div className="text-gray-600">50–120</div>
+                  <div className="flex items-center text-gray-700">
+                    <span className="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>
+                    Garlic Parmesan
+                  </div>
+                  <div className="text-gray-600">50–120</div>
                 </div>
-                
-                {sauceOptions.slice(1).map((sauce, index) => (
-                  <div key={index} className="flex items-center">
-                    <div className="w-4 h-4 border-2 border-gray-300 rounded-full mr-3"></div>
-                    <span className="text-gray-600">{sauce.name}</span>
-                  </div>
-                ))}
               </div>
             </div>
           </div>
@@ -308,91 +313,30 @@ export default function BuildYourOwnPizzaPage({ categories }: BuildYourOwnPizzaP
           {/* Toppings Section */}
           <div className="bg-white rounded-lg shadow-md border border-gray-100">
             <div className="bg-cyan-700 text-white px-4 py-3 rounded-t-lg">
-              <h2 className="text-lg font-bold">5. TOPPINGS</h2>
+              <h2 className="text-lg font-bold">4. TOPPINGS</h2>
             </div>
             <div className="p-4">
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-sm text-gray-600">Sort By:</span>
-                <div className="flex space-x-2">
-                  <button className="px-3 py-1 text-sm bg-cyan-700 text-white rounded">Featured</button>
-                  <button className="px-3 py-1 text-sm border border-gray-300 rounded">Popular</button>
-                  <button className="px-3 py-1 text-sm border border-gray-300 rounded">A to Z</button>
-                </div>
-              </div>
+              <p className="text-sm text-red-600 font-medium mb-4">Each Additional Topping: $2.50</p>
               
-              <div className="space-y-2">
-                {toppings.map((topping, index) => (
-                  <div key={index} className="flex items-center py-2 border-b border-gray-100 last:border-b-0">
-                    <div className="w-4 h-4 border-2 border-gray-300 rounded mr-3"></div>
-                    <span className="text-gray-700">{topping}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Add Sauces for Dipping Section */}
-          <div className="bg-white rounded-lg shadow-md border border-gray-100">
-            <div className="bg-cyan-700 text-white px-4 py-3 rounded-t-lg">
-              <h2 className="text-lg font-bold">6. ADD SAUCES FOR DIPPING</h2>
-            </div>
-            <div className="p-4">
-              <p className="text-sm text-gray-600 mb-4">Additional charges apply</p>
-              <div className="space-y-3">
-                {dippingCups.map((cup, index) => (
-                  <div key={index} className="flex items-center justify-between py-2">
-                    <div className="flex items-center">
-                      <div className={`w-6 h-6 ${cup.color} rounded-full mr-3`}></div>
-                      <span className="text-gray-700">{cup.name}</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <button className="w-8 h-8 border border-gray-300 rounded-full flex items-center justify-center text-gray-400">−</button>
-                      <span className="w-6 text-center">0</span>
-                      <button className="w-8 h-8 bg-cyan-700 text-white rounded-full flex items-center justify-center">+</button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Special Instructions Section */}
-          <div className="bg-white rounded-lg shadow-md border border-gray-100">
-            <div className="bg-cyan-700 text-white px-4 py-3 rounded-t-lg">
-              <h2 className="text-lg font-bold">SPECIAL INSTRUCTIONS</h2>
-            </div>
-            <div className="p-4">
-              <div className="border border-gray-300 rounded p-3 min-h-[80px] bg-gray-50">
-                <p className="text-gray-500 text-sm">Special instructions for your pizza preparation...</p>
-              </div>
-            </div>
-          </div>
-
-          {/* My Pizza Section */}
-          <div className="bg-white rounded-lg shadow-md border border-gray-100">
-            <div className="bg-cyan-700 text-white px-4 py-3 rounded-t-lg">
-              <h2 className="text-lg font-bold">MY PIZZA</h2>
-            </div>
-            <div className="p-4">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="font-bold text-gray-800">X-Large (16") Hand Tossed Pizza</h3>
-                  <p className="text-sm text-gray-600">Cheese</p>
+              <div className="grid grid-cols-1 gap-4">
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="font-semibold text-gray-800 border-b border-gray-300 pb-2">Topping</div>
+                  <div className="font-semibold text-gray-800 border-b border-gray-300 pb-2">Calories</div>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <button className="w-8 h-8 border border-gray-300 rounded-full flex items-center justify-center text-gray-400">−</button>
-                  <span className="w-6 text-center font-bold">1</span>
-                  <button className="w-8 h-8 bg-cyan-700 text-white rounded-full flex items-center justify-center">+</button>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2">
+                  {toppings.map((topping, index) => (
+                    <div key={index} className="grid grid-cols-2 gap-4 py-1">
+                      <div className="flex items-center text-gray-700 text-sm">
+                        <span className="w-2 h-2 bg-gray-400 rounded-full mr-2 flex-shrink-0"></span>
+                        <span className="truncate">{topping.name}</span>
+                      </div>
+                      <div className="text-gray-600 text-sm">{topping.calories}</div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Static Info Note */}
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-            <p className="text-sm text-blue-700 text-center">
-              <strong>Menu Display Only</strong> - This is a static menu showcase. No ordering functionality is available.
-            </p>
           </div>
 
         </div>
