@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { MapPin, Phone, Clock } from 'lucide-react';
 import CategoryPage from './components/CategoryPage';
 import PizzaDetailPage from './components/PizzaDetailPage';
+import ChickenDetailPage from './components/ChickenDetailPage';
 import DrinksDetailPage from './components/DrinksDetailPage';
 import DippingCupsDetailPage from './components/DippingCupsDetailPage';
 import NotFoundPage from './components/NotFoundPage';
@@ -208,6 +209,10 @@ function App() {
         <Route 
           path="/pizza/:slug" 
           element={<PizzaDetailPage categories={menuCategories.map(cat => ({ name: cat.name, slug: cat.slug }))} />} 
+        />
+        <Route 
+          path="/chicken/:slug" 
+          element={<ChickenDetailPage categories={menuCategories.map(cat => ({ name: cat.name, slug: cat.slug }))} />} 
         />
         <Route 
           path="/drinks" 

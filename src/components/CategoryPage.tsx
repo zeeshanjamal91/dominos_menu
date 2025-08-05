@@ -310,6 +310,34 @@ export default function CategoryPage({ categories }: CategoryPageProps) {
     }
   ];
 
+  // Chicken items
+  const chickenItems = [
+    {
+      name: "Bone-In Wings",
+      description: "Crispy bone-in wings with your choice of sauce",
+      price: "$9.99 - $32.99",
+      calories: "Cal: 250 - 390",
+      image: "/images/chicken/bone_in_wings.png",
+      slug: "bone-in-wings"
+    },
+    {
+      name: "Boneless Chicken",
+      description: "Tender boneless chicken pieces with premium seasonings",
+      price: "$9.99 - $32.99",
+      calories: "Cal: 170",
+      image: "/images/chicken/S_BONELESS.jpg",
+      slug: "boneless-chicken"
+    },
+    {
+      name: "Loaded Chicken",
+      description: "Chicken loaded with delicious toppings and flavors",
+      price: "$7.99",
+      calories: "Cal: 190 - 210",
+      image: "/images/chicken/S_Loaded.jpg",
+      slug: "loaded-chicken"
+    }
+  ];
+
   // Use specialty pizza items for specialty-pizzas category, otherwise use sample items
   const sampleItems = [
     {
@@ -337,6 +365,8 @@ export default function CategoryPage({ categories }: CategoryPageProps) {
 
   const menuItems = category.slug === 'specialty-pizzas' 
     ? specialtyPizzaItems 
+    : category.slug === 'chicken'
+    ? chickenItems
     : category.slug === 'loaded-tots' 
     ? loadedTotsItems 
     : category.slug === 'sandwiches'
@@ -458,6 +488,7 @@ export default function CategoryPage({ categories }: CategoryPageProps) {
               <Link
                 to={
                   category.slug === 'specialty-pizzas' && 'slug' in item ? `/pizza/${item.slug}` : 
+                  category.slug === 'chicken' && 'slug' in item ? `/chicken/${item.slug}` : 
                   category.slug === 'extras' && item.name === 'Drinks' ? '/drinks' : 
                   category.slug === 'extras' && item.name === 'Dipping Cups' ? '/dipping-cups' : 
                   '#'
