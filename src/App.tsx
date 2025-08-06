@@ -3,6 +3,8 @@ import { MapPin, Phone, Clock } from 'lucide-react';
 import CategoryPage from './components/CategoryPage';
 import PizzaDetailPage from './components/PizzaDetailPage';
 import ChickenDetailPage from './components/ChickenDetailPage';
+import LoadedTotsDetailPage from './components/LoadedTotsDetailPage';
+import SandwichesDetailPage from './components/SandwichesDetailPage';
 import DrinksDetailPage from './components/DrinksDetailPage';
 import DippingCupsDetailPage from './components/DippingCupsDetailPage';
 import NotFoundPage from './components/NotFoundPage';
@@ -213,6 +215,14 @@ function App() {
         <Route 
           path="/chicken/:slug" 
           element={<ChickenDetailPage categories={menuCategories.map(cat => ({ name: cat.name, slug: cat.slug }))} />} 
+        />
+        <Route 
+          path="/loaded-tots/:slug" 
+          element={<LoadedTotsDetailPage categories={menuCategories.map(cat => ({ name: cat.name, slug: cat.slug }))} />} 
+        />
+        <Route 
+          path="/sandwiches/:slug" 
+          element={<SandwichesDetailPage categories={menuCategories.map(cat => ({ name: cat.name, slug: cat.slug }))} />} 
         />
         <Route 
           path="/drinks" 

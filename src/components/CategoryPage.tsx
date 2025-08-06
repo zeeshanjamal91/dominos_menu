@@ -143,72 +143,81 @@ export default function CategoryPage({ categories }: CategoryPageProps) {
     {
       name: "Philly Cheesesteak",
       price: "$6.99",
-      calories: "",
+      calories: "Cal: 780",
       description: "Crispy tots loaded with tender steak, peppers, onions, and melted cheese",
-      image: "/images/categories/loadedtots.png"
+      image: "/images/loaded_tots/F_PHLLYSTK.jpg",
+      slug: "philly-cheesesteak"
     },
     {
       name: "Melty 3-Cheese",
       price: "$6.99",
-      calories: "",
+      calories: "Cal: 730",
       description: "Golden tots topped with a blend of three melted cheeses",
-      image: "/images/categories/loadedtots.png"
+      image: "/images/loaded_tots/F_M3CHEESE.jpg",
+      slug: "melty-3-cheese"
     },
     {
       name: "Cheddar Bacon",
       price: "$6.93",
-      calories: "",
+      calories: "Cal: 740",
       description: "Crispy tots loaded with sharp cheddar cheese and crispy bacon bits",
-      image: "/images/categories/loadedtots.png"
+      image: "/images/loaded_tots/F_CHEDBCN.jpg",
+      slug: "cheddar-bacon"
     }
   ];
 
 
 
-  // Sandwitches Items
+  // Sandwiches Items
 
    const sandwichesItems = [
     {
-      name: "Philly Cheesesteak",
-      price: "$6.99",
-      calories: "",
-      description: "Crispy tots loaded with tender steak, peppers, onions, and melted cheese",
-      image: "/images/categories/sandwiches.png"
+      name: "Philly Cheese Steak",
+      price: "$7.99",
+      calories: "Cal: 380",
+      description: "Tender slices of steak, American and provolone cheeses, fresh onions, fresh green peppers and fresh mushrooms.",
+      image: "/images/sandwitches/S_PHIL.jpg",
+      slug: "philly-cheese-steak"
     },
     {
       name: "Chicken Bacon Ranch",
-      price: "$6.99",
-      calories: "",
-      description: "Golden tots topped with a blend of three melted cheeses",
-      image: "/images/categories/sandwiches.png"
+      price: "$7.99",
+      calories: "Cal: 450",
+      description: "Grilled chicken breast, smoked bacon, creamy ranch and provolone cheese.",
+      image: "/images/sandwitches/S_CHIKKBR.jpg",
+      slug: "chicken-bacon-ranch"
     },
     {
       name: "Italian",
-      price: "$6.93",
-      calories: "",
-      description: "Crispy tots loaded with sharp cheddar cheese and crispy bacon bits",
-      image: "/images/categories/sandwiches.png"
+      price: "$7.99",
+      calories: "Cal: 430",
+      description: "Pepperoni and ham topped with banana peppers, fresh green peppers, fresh onions and provolone cheese.",
+      image: "/images/sandwitches/S_ITALIAN.jpg",
+      slug: "italian"
     },
      {
       name: "Chicken Parm",
-      price: "$6.93",
-      calories: "",
-      description: "Crispy tots loaded with sharp cheddar cheese and crispy bacon bits",
-      image: "/images/categories/sandwiches.png"
+      price: "$7.99",
+      calories: "Cal: 400",
+      description: "Grilled chicken breast, tomato-basil marinara, Parmesan-Asiago and provolone cheeses.",
+      image: "/images/sandwitches/S_CHIKP.jpg",
+      slug: "chicken-parm"
     },
      {
        name: "Buffalo Chicken",
        price: "$7.99",
       calories: "Cal: 430",
-      description: "Crispy tots loaded with sharp cheddar cheese and crispy bacon bits",
-      image: "/images/categories/sandwiches.png"
+      description: "Grilled chicken breast, creamy blue cheese sauce, fresh onions, hot buffalo sauce, provolone, cheddar and cheese made with 100% real mozzarella.",
+      image: "/images/sandwitches/S_BUFC.jpg",
+      slug: "buffalo-chicken"
      },
      {
        name: "Chicken Habanero",
        price: "$7.99",
       calories: "Cal: 390",
-      description: "Crispy tots loaded with sharp cheddar cheese and crispy bacon bits",
-      image: "/images/categories/sandwiches.png"
+      description: "Grilled chicken breast, pineapple, jalapeños, sweet mango habanero sauce, provolone, cheddar and cheese made with 100% real mozzarella.",
+      image: "/images/sandwitches/S_CHHB.jpg",
+      slug: "chicken-habanero"
      }
   ];
 
@@ -489,6 +498,8 @@ export default function CategoryPage({ categories }: CategoryPageProps) {
                 to={
                   category.slug === 'specialty-pizzas' && 'slug' in item ? `/pizza/${item.slug}` : 
                   category.slug === 'chicken' && 'slug' in item ? `/chicken/${item.slug}` : 
+                  category.slug === 'loaded-tots' && 'slug' in item ? `/loaded-tots/${item.slug}` : 
+                  category.slug === 'sandwiches' && 'slug' in item ? `/sandwiches/${item.slug}` : 
                   category.slug === 'extras' && item.name === 'Drinks' ? '/drinks' : 
                   category.slug === 'extras' && item.name === 'Dipping Cups' ? '/dipping-cups' : 
                   '#'
