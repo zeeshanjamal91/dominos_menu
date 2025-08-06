@@ -169,7 +169,16 @@ export default function ChickenDetailPage({ categories }: ChickenDetailPageProps
             <div className="text-gray-700 text-sm leading-relaxed">
               {item.description.split('\n').map((line, index) => (
                 <p key={index} className={index > 0 ? 'mt-2' : ''}>
-                  {line}
+                  {line.includes('(Serving Size:') ? (
+                    <>
+                      {line.split('(Serving Size:')[0]}
+                      <span className="font-bold text-gray-800">
+                        (Serving Size:{line.split('(Serving Size:')[1]}
+                      </span>
+                    </>
+                  ) : (
+                    line
+                  )}
                 </p>
               ))}
             </div>

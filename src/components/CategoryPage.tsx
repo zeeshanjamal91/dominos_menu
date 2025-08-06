@@ -274,41 +274,46 @@ export default function CategoryPage({ categories }: CategoryPageProps) {
   const saladsItems = [
     {
       name: "Classic Garden",
-      description: "Fresh lettuce, tomatoes, cucumber, and onions with your choice of dressing",
+      description: "A crisp and colorful combination of grape tomatoes, red onions, carrots, red cabbage, cheddar cheese and brioche garlic croutons, all atop a blend of romaine and iceberg lettuce.",
       price: "$7.99",
       calories: "Cal: 80",
-      image: "/images/salads/F_GARDEN.jpg"
+      image: "/images/salads/F_GARDEN.jpg",
+      slug: "classic-garden"
     },
     {
       name: "Chicken Caesar",
-      description: "Grilled chicken breast on fresh romaine lettuce with Caesar dressing",
+      description: "The makings of a classic: roasted white meat chicken, Parmesan cheese and brioche garlic croutons, all atop a blend of romaine and iceberg lettuce.",
       price: "$7.99",
       calories: "Cal: 220",
-      image: "/images/salads/F_CCAESAR.jpg"
+      image: "/images/salads/F_CCAESAR.jpg",
+      slug: "chicken-caesar"
     }
   ];
 
   const dessertsItems = [
     {
       name: "Cinnamon Bread Twists",
-      description: "Sweet and warm cinnamon bread twists baked to perfection",
-      price: "$7.99",
-      calories: "8 for $7.99",
-      image: "/images/desserts/F_CINNAT.jpg"
+      description: "Handmade from fresh buttery-tasting dough and baked to a golden brown. Crispy on the outside and soft on the inside. Drizzled with a perfect blend of cinnamon and sugar, and served with a side of sweet icing.",
+      price: "8 for $7.99",
+      calories: "Cal: 250",
+      image: "/images/desserts/F_CINNAT.jpg",
+      slug: "cinnamon-bread-twists"
     },
     {
       name: "Chocolate Lava Crunch Cakes",
-      description: "Rich chocolate cake with molten chocolate center",
-      price: "$8.99",
-      calories: "3 for $8.99",
-      image: "/images/desserts/F_LAVA.jpg"
+      description: "Oven-baked chocolate cakes, crunchy on the outside with molten chocolate fudge on the inside.",
+      price: "3 for $8.99",
+      calories: "Cal: 350",
+      image: "/images/desserts/F_LAVA.jpg",
+      slug: "chocolate-lava-crunch-cakes"
     },
     {
       name: "Domino's Marbled Cookie Brownie™",
-      description: "Delicious marbled cookie brownie with rich chocolate chunks",
-      price: "$8.99",
-      calories: "9 for $8.99",
-      image: "/images/desserts/F_MRBRWNE.jpg"
+      description: "An irresistibly warm and gooey blend of milk chocolate chunk cookie and fudge brownie. This sharable dessert is oven-baked at the time of order and cut into 9 pieces.",
+      price: "9 for $8.99",
+      calories: "Cal: 200",
+      image: "/images/desserts/F_MRBRWNE.jpg",
+      slug: "marbled-cookie-brownie"
     }
   ];
 
@@ -511,6 +516,8 @@ export default function CategoryPage({ categories }: CategoryPageProps) {
                   category.slug === 'loaded-tots' && 'slug' in item ? `/loaded-tots/${item.slug}` : 
                   category.slug === 'sandwiches' && 'slug' in item ? `/sandwiches/${item.slug}` : 
                   category.slug === 'penne-pastas' && 'slug' in item ? `/penne-pastas/${item.slug}` : 
+                  category.slug === 'salads' && 'slug' in item ? `/salads/${item.slug}` : 
+                  category.slug === 'desserts' && 'slug' in item ? `/desserts/${item.slug}` : 
                   category.slug === 'extras' && item.name === 'Drinks' ? '/drinks' : 
                   category.slug === 'extras' && item.name === 'Dipping Cups' ? '/dipping-cups' : 
                   '#'
