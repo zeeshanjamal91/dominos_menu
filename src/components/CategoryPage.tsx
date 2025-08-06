@@ -226,17 +226,27 @@ export default function CategoryPage({ categories }: CategoryPageProps) {
   const pastasItems = [
     {
       name: "Chicken Alfredo",
-      description: "Our most popular item with premium ingredients and special sauce",
+      description: "Grilled chicken breast and creamy Alfredo sauce mixed with penne pasta and baked to perfection.",
       price: "$7.99 - $8.99",
-      calories: "",
-      image: "/images/categories/pasta.png"
+      calories: "Cal: 600 - 690",
+      image: "/images/penne_pasta/S_ALFR.jpg",
+      slug: "chicken-alfredo"
     },
     {
       name: "Italian Sausage Marinara",
-      description: "Traditional recipe that's been a customer favorite for years",
+      description: "Penne pasta baked in zesty tomato-basil marinara sauce with Italian sausage, a blend of Italian seasonings and provolone cheese.",
       price: "$7.99 - $8.99",
-      calories: "",
-      image: "/images/categories/pasta.png"
+      calories: "Cal: 700 - 740",
+      image: "/images/penne_pasta/S_ITALMAR.jpg",
+      slug: "italian-sausage-marinara"
+    },
+    {
+      name: "Build Your Own Pasta",
+      description: "Create your own perfect pasta with your choice of sauce and toppings, baked to perfection.",
+      price: "$7.99 - $8.99",
+      calories: "Cal: 340 - 1070",
+      image: "/images/penne_pasta/S_BUILD.jpg",
+      slug: "build-your-own-pasta"
     }
   ];
 
@@ -500,6 +510,7 @@ export default function CategoryPage({ categories }: CategoryPageProps) {
                   category.slug === 'chicken' && 'slug' in item ? `/chicken/${item.slug}` : 
                   category.slug === 'loaded-tots' && 'slug' in item ? `/loaded-tots/${item.slug}` : 
                   category.slug === 'sandwiches' && 'slug' in item ? `/sandwiches/${item.slug}` : 
+                  category.slug === 'penne-pastas' && 'slug' in item ? `/penne-pastas/${item.slug}` : 
                   category.slug === 'extras' && item.name === 'Drinks' ? '/drinks' : 
                   category.slug === 'extras' && item.name === 'Dipping Cups' ? '/dipping-cups' : 
                   '#'

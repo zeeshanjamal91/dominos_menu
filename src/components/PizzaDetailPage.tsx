@@ -168,13 +168,6 @@ export default function PizzaDetailPage({ categories }: PizzaDetailPageProps) {
         </div>
       </header>
 
-      {/* Page Title */}
-      <div className="bg-gray-100 py-4 px-4">
-        <div className="max-w-lg mx-auto">
-          <h1 className="text-xl sm:text-2xl font-bold leading-tight text-gray-800">{pizza.name}</h1>
-        </div>
-      </div>
-
       {/* Pizza Details */}
       <main className="py-6 px-4 pb-8">
         <div className="max-w-lg mx-auto">
@@ -188,7 +181,7 @@ export default function PizzaDetailPage({ categories }: PizzaDetailPageProps) {
               />
               <div className="flex justify-between items-start">
                 <div className="flex-1">
-                  <h2 className="text-xl font-bold text-gray-800">{pizza.name}</h2>
+                  <h1 className="text-xl font-bold text-gray-800">{pizza.name}</h1>
                 </div>
                 <div className="text-right">
                   <div className="text-2xl font-bold text-red-600">{currentPrice}</div>
