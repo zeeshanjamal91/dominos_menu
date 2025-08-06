@@ -6,6 +6,7 @@ import ChickenDetailPage from './components/ChickenDetailPage';
 import LoadedTotsDetailPage from './components/LoadedTotsDetailPage';
 import SandwichesDetailPage from './components/SandwichesDetailPage';
 import PennePastasDetailPage from './components/PennePastasDetailPage';
+import DipsBreadsDetailPage from './components/DipsBreadsDetailPage';
 import SaladsDetailPage from './components/SaladsDetailPage';
 import DessertsDetailPage from './components/DessertsDetailPage';
 import DrinksDetailPage from './components/DrinksDetailPage';
@@ -230,6 +231,10 @@ function App() {
         <Route 
           path="/penne-pastas/:slug" 
           element={<PennePastasDetailPage categories={menuCategories.map(cat => ({ name: cat.name, slug: cat.slug }))} />} 
+        />
+        <Route 
+          path="/dips-breads/:slug" 
+          element={<DipsBreadsDetailPage categories={menuCategories.map(cat => ({ name: cat.name, slug: cat.slug }))} />} 
         />
         <Route 
           path="/salads/:slug" 

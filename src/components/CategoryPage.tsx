@@ -255,17 +255,43 @@ export default function CategoryPage({ categories }: CategoryPageProps) {
   const dipsBreadItems = [
     {
       name: "Five Cheese Dip & Bread Twists Combo",
-      description: "Our most popular item with premium ingredients and special sauce",
-      price: "$3.99 - $9.99",
-      calories: "350 - 360",
-      image: "/images/categories/breadandovenbakeddips.png"
+      description: "A combination of cheddar, Asiago, Parmesan, American and Pizza cheeses oven baked to perfection. Paired with Parmesan or Garlic Twists.",
+      price: "$9.99 • Dip Only $3.99",
+      calories: "350–360",
+      image: "/images/dip_breads/P_FVCHPAIR.jpg",
+      slug: "five-cheese-dip-bread-twists"
     },
     {
       name: "Cheesy Marinara Dip & Bread Twists Combo",
-      description: "Traditional recipe that's been a customer favorite for years",
-      price: "$3.99 - $9.99",
-      calories: "290 - 300",
-      image: "/images/categories/breadandovenbakeddips.png"
+      description: "Layers of flavorful marinara sauce oven baked with creamy, melted cheeses. Paired with Parmesan or Garlic Twists.",
+      price: "$9.99 • Dip Only $3.99",
+      calories: "290–300",
+      image: "/images/dip_breads/P_MARPAIR.jpg",
+      slug: "cheesy-marinara-dip-bread-twists"
+    },
+    {
+      name: "Bread Twists",
+      description: "Handmade from fresh buttery-tasting dough and baked to a golden brown. Try all three: garlic, Parmesan or cinnamon varieties.",
+      price: "8 for $7.99",
+      calories: "220 - 250",
+      image: "/images/dip_breads/F_GARLICT.jpg",
+      slug: "bread-twists"
+    },
+    {
+      name: "Parmesan Bread Bites",
+      description: "Oven-baked bread bites handmade from fresh buttery-tasting dough and seasoned with garlic and Parmesan.",
+      price: "16 for $7.99 • 32 for $13.99",
+      calories: "220",
+      image: "/images/dip_breads/F_PBITES.jpg",
+      slug: "parmesan-bread-bites"
+    },
+    {
+      name: "Stuffed Cheesy Bread",
+      description: "Oven-baked breadsticks stuffed with cheese and covered in a blend of cheeses made with 100% real mozzarella and cheddar. Try all three varieties.",
+      price: "$7.99 - $8.99",
+      calories: "150 - 170",
+      image: "/images/dip_breads/F_SCBRD.jpg",
+      slug: "stuffed-cheesy-bread"
     }
   ];
 
@@ -516,6 +542,7 @@ export default function CategoryPage({ categories }: CategoryPageProps) {
                   category.slug === 'loaded-tots' && 'slug' in item ? `/loaded-tots/${item.slug}` : 
                   category.slug === 'sandwiches' && 'slug' in item ? `/sandwiches/${item.slug}` : 
                   category.slug === 'penne-pastas' && 'slug' in item ? `/penne-pastas/${item.slug}` : 
+                  category.slug === 'dips-breads' && 'slug' in item ? `/dips-breads/${item.slug}` : 
                   category.slug === 'salads' && 'slug' in item ? `/salads/${item.slug}` : 
                   category.slug === 'desserts' && 'slug' in item ? `/desserts/${item.slug}` : 
                   category.slug === 'extras' && item.name === 'Drinks' ? '/drinks' : 
