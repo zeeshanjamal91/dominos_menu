@@ -25,7 +25,7 @@ export default function DessertsDetailPage({ categories }: DessertsDetailPagePro
     'chocolate-lava-crunch-cakes': {
       name: "Chocolate Lava Crunch Cakes",
       image: "/images/desserts/F_LAVA.jpg",
-      price: "3 for $8.99",
+      price: "3 for $9.99",
       calories: "Cal: 350",
       description: "Oven-baked chocolate cakes, crunchy on the outside with molten chocolate fudge on the inside.",
       servingSize: "Serving Size: 1-pc"
@@ -33,7 +33,7 @@ export default function DessertsDetailPage({ categories }: DessertsDetailPagePro
     'marbled-cookie-brownie': {
       name: "Domino's Marbled Cookie Brownie™",
       image: "/images/desserts/F_MRBRWNE.jpg",
-      price: "9 for $8.99",
+      price: "9 for $9.99",
       calories: "Cal: 200",
       description: "An irresistibly warm and gooey blend of milk chocolate chunk cookie and fudge brownie. This sharable dessert is oven-baked at the time of order and cut into 9 pieces.",
       servingSize: "Serving Size: 1-pc"

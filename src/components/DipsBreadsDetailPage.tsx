@@ -15,17 +15,11 @@ export default function DipsBreadsDetailPage({ categories }: DipsBreadsDetailPag
   
   // Set initial selection based on item type
   const getInitialSelection = () => {
-    if (slug === 'five-cheese-dip-bread-twists' || slug === 'cheesy-marinara-dip-bread-twists') {
-      return 'combo';
-    }
-    if (slug === 'bread-twists') {
-      return 'garlic';
-    }
-    if (slug === 'parmesan-bread-bites') {
+    if (slug === 'parmesan-bread-bites' || slug === 'garlic-bites' || slug === 'cinnamon-bites') {
       return '16';
     }
     if (slug === 'stuffed-cheesy-bread') {
-      return 'pepperoni';
+      return 'cheesy';
     }
     return 'small';
   };
@@ -34,59 +28,38 @@ export default function DipsBreadsDetailPage({ categories }: DipsBreadsDetailPag
 
   // Dips & Breads items data
   const dipsBreadsItems = {
-    'five-cheese-dip-bread-twists': {
-      name: "Five Cheese Dip & Bread Twists Combo",
-      image: "/images/dip_breads/P_FVCHPAIR.jpg",
-      description: "A combination of cheddar, Asiago, Parmesan, American and Pizza cheeses oven baked to perfection. Paired with Parmesan or Garlic Twists.",
-      servingSize: {
-        combo: "Serving Size: 2 tbsp dip and 2-pc twists",
-        diponly: "Serving Size: 2 tbsp dip"
-      },
-      pricing: {
-        combo: { price: "$9.99", calories: "Cal: 350–360" },
-        diponly: { price: "$3.99", calories: "Cal: 350" }
-      },
-      hasSelection: true
-    },
-    'cheesy-marinara-dip-bread-twists': {
-      name: "Cheesy Marinara Dip & Bread Twists Combo",
-      image: "/images/dip_breads/P_MARPAIR.jpg",
-      description: "Layers of flavorful marinara sauce oven baked with creamy, melted cheeses. Paired with Parmesan or Garlic Twists.",
-      servingSize: {
-        combo: "Serving Size: 2 tbsp dip and 2-pc twists",
-        diponly: "Serving Size: 2 tbsp dip"
-      },
-      pricing: {
-        combo: { price: "$9.99", calories: "Cal: 290–300" },
-        diponly: { price: "$3.99", calories: "Cal: 290" }
-      },
-      hasSelection: true
-    },
-    'bread-twists': {
-      name: "Bread Twists",
-      image: {
-        garlic: "/images/dip_breads/F_GARLICT.jpg",
-        parmesan: "/images/dip_breads/F_PARMT.jpg",
-        cinnamon: "/images/dip_breads/F_CINNAT.jpg"
-      },
-      description: "Handmade from fresh buttery-tasting dough and baked to a golden brown. Crispy on the outside and soft on the inside.",
-      servingSize: "Serving Size: 2-pc",
-      pricing: {
-        garlic: { price: "8 for $7.99", calories: "Cal: 220" },
-        parmesan: { price: "8 for $7.99", calories: "Cal: 230" },
-        cinnamon: { price: "8 for $7.99", calories: "Cal: 250" }
-      },
-      hasSelection: true,
-      selectionType: "variety"
-    },
     'parmesan-bread-bites': {
       name: "Parmesan Bread Bites",
       image: "/images/dip_breads/F_PBITES.jpg",
       description: "Oven-baked bread bites handmade from fresh buttery-tasting dough and seasoned with garlic and Parmesan.",
       servingSize: "Serving Size: 4-pc",
       pricing: {
-        "16": { price: "16 for $7.99", calories: "Cal: 220" },
-        "32": { price: "32 for $13.99", calories: "Cal: 220" }
+        "16": { price: "16 for $8.99", calories: "Cal: 220" },
+        "32": { price: "32 for $14.99", calories: "Cal: 220" }
+      },
+      hasSelection: true,
+      selectionType: "circular"
+    },
+    'garlic-bites': {
+      name: "Garlic Bites",
+      image: "/images/dip_breads/F_PBITES.jpg",
+      description: "Oven-baked bread bites handmade from fresh buttery-tasting dough and seasoned with savory garlic and herbs.",
+      servingSize: "Serving Size: 4-pc",
+      pricing: {
+        "16": { price: "16 for $8.99", calories: "Cal: 210" },
+        "32": { price: "32 for $14.99", calories: "Cal: 210" }
+      },
+      hasSelection: true,
+      selectionType: "circular"
+    },
+    'cinnamon-bites': {
+      name: "Cinnamon Bites",
+      image: "/images/dip_breads/F_PBITES.jpg",
+      description: "Oven-baked bread bites handmade from fresh buttery-tasting dough and seasoned with sweet cinnamon and sugar.",
+      servingSize: "Serving Size: 4-pc",
+      pricing: {
+        "16": { price: "16 for $8.99", calories: "Cal: 240" },
+        "32": { price: "32 for $14.99", calories: "Cal: 240" }
       },
       hasSelection: true,
       selectionType: "circular"
@@ -94,6 +67,7 @@ export default function DipsBreadsDetailPage({ categories }: DipsBreadsDetailPag
     'stuffed-cheesy-bread': {
       name: "Stuffed Cheesy Bread",
       image: {
+        cheesy: "/images/dip_breads/F_SCBRD.jpg",
         pepperoni: "/images/dip_breads/F_SCBRD.jpg",
         spinachfeta: "/images/dip_breads/F_SPBRD.jpg",
         baconjalapeno: "/images/dip_breads/F_SBBRD.jpg"
@@ -101,9 +75,10 @@ export default function DipsBreadsDetailPage({ categories }: DipsBreadsDetailPag
       description: "Oven-baked breadsticks stuffed with cheese and covered in a blend of cheeses made with 100% real mozzarella and cheddar. Seasoned with a touch of garlic.",
       servingSize: "Serving Size: 1-pc",
       pricing: {
-        pepperoni: { price: "8 for $7.99", calories: "Cal: 150" },
-        spinachfeta: { price: "8 for $8.99", calories: "Cal: 160" },
-        baconjalapeno: { price: "8 for $8.99", calories: "Cal: 170" }
+        cheesy: { price: "8 for $9.99", calories: "Cal: 140" },
+        pepperoni: { price: "8 for $9.99", calories: "Cal: 150" },
+        spinachfeta: { price: "8 for $9.99", calories: "Cal: 160" },
+        baconjalapeno: { price: "8 for $9.99", calories: "Cal: 170" }
       },
       hasSelection: true,
       selectionType: "variety"
@@ -238,63 +213,7 @@ export default function DipsBreadsDetailPage({ categories }: DipsBreadsDetailPag
             {item.hasSelection && (
               <div className="mb-6">
                 <div className="flex justify-center space-x-4">
-                  {(slug === 'five-cheese-dip-bread-twists' || slug === 'cheesy-marinara-dip-bread-twists') ? (
-                    <>
-                      <button
-                        onClick={() => setSelectedSize('combo')}
-                        className={`px-6 py-3 rounded-lg border-2 font-semibold transition-colors ${
-                          selectedSize === 'combo'
-                            ? 'bg-red-600 border-red-600 text-white'
-                            : 'bg-white border-gray-300 text-gray-700 hover:border-gray-400'
-                        }`}
-                      >
-                        Combo
-                      </button>
-                      <button
-                        onClick={() => setSelectedSize('diponly')}
-                        className={`px-6 py-3 rounded-lg border-2 font-semibold transition-colors ${
-                          selectedSize === 'diponly'
-                            ? 'bg-red-600 border-red-600 text-white'
-                            : 'bg-white border-gray-300 text-gray-700 hover:border-gray-400'
-                        }`}
-                      >
-                        Dip Only
-                      </button>
-                    </>
-                  ) : slug === 'bread-twists' ? (
-                    <>
-                      <button
-                        onClick={() => setSelectedSize('garlic')}
-                        className={`px-4 py-3 rounded-lg border-2 font-semibold transition-colors ${
-                          selectedSize === 'garlic'
-                            ? 'bg-red-600 border-red-600 text-white'
-                            : 'bg-white border-gray-300 text-gray-700 hover:border-gray-400'
-                        }`}
-                      >
-                        Garlic
-                      </button>
-                      <button
-                        onClick={() => setSelectedSize('parmesan')}
-                        className={`px-4 py-3 rounded-lg border-2 font-semibold transition-colors ${
-                          selectedSize === 'parmesan'
-                            ? 'bg-red-600 border-red-600 text-white'
-                            : 'bg-white border-gray-300 text-gray-700 hover:border-gray-400'
-                        }`}
-                      >
-                        Parmesan
-                      </button>
-                      <button
-                        onClick={() => setSelectedSize('cinnamon')}
-                        className={`px-4 py-3 rounded-lg border-2 font-semibold transition-colors ${
-                          selectedSize === 'cinnamon'
-                            ? 'bg-red-600 border-red-600 text-white'
-                            : 'bg-white border-gray-300 text-gray-700 hover:border-gray-400'
-                        }`}
-                      >
-                        Cinnamon
-                      </button>
-                    </>
-                  ) : slug === 'parmesan-bread-bites' ? (
+                  {(slug === 'parmesan-bread-bites' || slug === 'garlic-bites' || slug === 'cinnamon-bites') ? (
                     <>
                       <button
                         onClick={() => setSelectedSize('16')}
@@ -319,6 +238,16 @@ export default function DipsBreadsDetailPage({ categories }: DipsBreadsDetailPag
                     </>
                   ) : slug === 'stuffed-cheesy-bread' ? (
                     <div className="flex justify-center space-x-2">
+                      <button
+                        onClick={() => setSelectedSize('cheesy')}
+                        className={`px-3 py-2 rounded-lg border-2 font-medium transition-colors text-sm ${
+                          selectedSize === 'cheesy'
+                            ? 'bg-red-600 border-red-600 text-white'
+                            : 'bg-white border-gray-300 text-gray-700 hover:border-gray-400'
+                        }`}
+                      >
+                        Cheesy
+                      </button>
                       <button
                         onClick={() => setSelectedSize('pepperoni')}
                         className={`px-3 py-2 rounded-lg border-2 font-medium transition-colors text-sm ${

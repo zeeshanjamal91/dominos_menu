@@ -17,21 +17,21 @@ export default function LoadedTotsDetailPage({ categories }: LoadedTotsDetailPag
     'philly-cheesesteak': {
       name: "Philly Cheesesteak",
       image: "/images/loaded_tots/F_PHLLYSTK.jpg",
-      price: "$6.99",
+      price: "$8.99",
       description: "Golden brown potato tots topped with tender slices of steak, creamy Alfredo sauce, fresh mozzarella, fresh green peppers, and a blend of cheese medley with mozzarella and cheddar.",
       servingSize: "Serving Size: 1/4 of Loaded Tots"
     },
     'melty-3-cheese': {
       name: "Melty 3-Cheese",
       image: "/images/loaded_tots/F_M3CHEESE.jpg",
-      price: "$6.99",
+      price: "$8.99",
       description: "Golden brown tots topped with a melty blend of cheese medley with mozzarella, cheddar, provolone, and creamy Alfredo sauce.",
       servingSize: "Serving Size: 1/4 of Loaded Tots"
     },
     'cheddar-bacon': {
       name: "Cheddar Bacon",
       image: "/images/loaded_tots/F_CHEDBCN.jpg",
-      price: "$6.93",
+      price: "$8.99",
       description: "Golden brown tots topped with smoky bacon, a blend of cheese medley with mozzarella and melty cheddar and garlic Parmesan sauce.",
       servingSize: "Serving Size: 1/4 of Loaded Tots"
     }

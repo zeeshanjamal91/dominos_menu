@@ -20,7 +20,8 @@ export default function SaladsDetailPage({ categories }: SaladsDetailPageProps) 
       price: "$7.99",
       calories: "Cal: 80",
       description: "A crisp and colorful combination of grape tomatoes, red onions, carrots, red cabbage, cheddar cheese and brioche garlic croutons, all atop a blend of romaine and iceberg lettuce.",
-      servingSize: "Serving Size: 1.5 Cup"
+      servingSize: "Serving Size: 1.5 Cup",
+      hasDressings: true
     },
     'chicken-caesar': {
       name: "Chicken Caesar",
@@ -28,9 +29,35 @@ export default function SaladsDetailPage({ categories }: SaladsDetailPageProps) 
       price: "$7.99",
       calories: "Cal: 220",
       description: "The makings of a classic: roasted white meat chicken, Parmesan cheese and brioche garlic croutons, all atop a blend of romaine and iceberg lettuce.",
-      servingSize: "Serving Size: 1 Bowl"
+      servingSize: "Serving Size: 1 Bowl",
+      hasDressings: true
+    },
+    'five-cheese-mac-cheese': {
+      name: "Five Cheese Mac & Cheese",
+      image: "/images/salads/F_GARDEN.jpg", // Temporary placeholder
+      price: "$8.99",
+      calories: "Cal: 450",
+      description: "Creamy macaroni and cheese made with five different cheeses for the ultimate comfort food experience.",
+      servingSize: "Serving Size: 1 Bowl",
+      hasDressings: true
+    },
+    'spicy-buffalo-mac-cheese': {
+      name: "Spicy Buffalo Mac & Cheese",
+      image: "/images/salads/F_GARDEN.jpg", // Temporary placeholder
+      price: "$9.99",
+      calories: "Cal: 480",
+      description: "Macaroni and cheese with a spicy buffalo kick, topped with crispy breadcrumbs and green onions.",
+      servingSize: "Serving Size: 1 Bowl",
+      hasDressings: true
     }
   };
+
+  // Available dressings for salads
+  const availableDressings = [
+    { name: "Ranch", calories: "Cal: 200" },
+    { name: "Caesar", calories: "Cal: 160" },
+    { name: "Light Balsamic", calories: "Cal: 45" }
+  ];
 
   const item = saladItems[slug as keyof typeof saladItems];
 
@@ -126,12 +153,45 @@ export default function SaladsDetailPage({ categories }: SaladsDetailPageProps) 
             </div>
 
             {/* Description */}
-            <div className="text-gray-700 text-sm leading-relaxed">
+            <div className="text-gray-700 text-sm leading-relaxed mb-6">
               <p className="mb-3">{item.description}</p>
               
               {/* Serving Size */}
               <p className="font-bold text-gray-800">{item.servingSize}</p>
             </div>
+
+            {/* Available Dressings - Only show for actual salads */}
+            {item.hasDressings && (
+              <div className="border-t border-gray-200 pt-6">
+                <h3 className="text-lg font-bold text-gray-800 mb-4 flex items-center">
+                  <span className="w-2 h-2 bg-cyan-500 rounded-full mr-3"></span>
+                  Available Dressings
+                </h3>
+                <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl p-4 border border-gray-200">
+                  <div className="overflow-hidden rounded-lg">
+                    <table className="w-full">
+                      <thead>
+                        <tr className="bg-cyan-700 text-white">
+                          <th className="px-4 py-3 text-left font-semibold text-sm">Dressing</th>
+                          <th className="px-4 py-3 text-right font-semibold text-sm">Calories</th>
+                        </tr>
+                      </thead>
+                      <tbody className="bg-white">
+                        {availableDressings.map((dressing, index) => (
+                          <tr key={index} className={`${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'} hover:bg-cyan-50 transition-colors`}>
+                            <td className="px-4 py-3 text-gray-800 font-medium text-sm">{dressing.name}</td>
+                            <td className="px-4 py-3 text-gray-600 text-right text-sm">{dressing.calories}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  <p className="text-xs text-gray-500 mt-3 text-center">
+                    Choose your favorite dressing to complement your salad
+                  </p>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </main>

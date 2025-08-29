@@ -14,16 +14,16 @@ export default function BuildYourOwnPizzaPage({ categories }: BuildYourOwnPizzaP
   const [selectedSize, setSelectedSize] = useState<string>('10"');
 
   const sizeOptions = [
-    { size: "10\"", name: "Small", description: "Serves 1-2" },
-    { size: "12\"", name: "Medium", description: "Serves 2-3" },
-    { size: "14\"", name: "Large", description: "Serves 3-4" },
-    { size: "16\"", name: "X-Large", description: "Serves 4-6" }
+    { size: "10\"", name: "Small" },
+    { size: "12\"", name: "Medium" },
+    { size: "14\"", name: "Large" },
+    { size: "16\"", name: "X-Large" }
   ];
 
   // Get price based on selected size
   const getPrice = () => {
     switch (selectedSize) {
-      case '10"': return "$8.99";
+      case '10"': return "$9.99";
       case '12"': return "$10.99";
       case '14"': return "$12.99";
       case '16"': return "$14.99";
@@ -36,60 +36,60 @@ export default function BuildYourOwnPizzaPage({ categories }: BuildYourOwnPizzaP
     switch (selectedSize) {
       case '10"':
         return [
-          { name: "Hand Tossed", calories: "130–240", note: "" },
-          { name: "Crunchy Thin", calories: "100–150", note: "" },
-          { name: "Gluten Free Crust", calories: "160", note: "$2 more. Not recommended for customers with celiac disease" }
+          { name: "Hand Tossed", note: "" },
+          { name: "Crunchy Thin", note: "" },
+          { name: "Gluten Free Crust", note: "$2 more. Not recommended for customers with celiac disease" }
         ];
       case '12"':
         return [
-          { name: "Hand Tossed", calories: "130–240", note: "" },
-          { name: "Crunchy Thin", calories: "100–150", note: "" },
-          { name: "Parmesan Stuffed", calories: "", note: "" },
-          { name: "Handmade Pan", calories: "190", note: "$2 more" }
+          { name: "Hand Tossed", note: "" },
+          { name: "Crunchy Thin", note: "" },
+          { name: "Parmesan Stuffed", note: "" },
+          { name: "Handmade Pan", note: "$2 more" }
         ];
       case '14"':
         return [
-          { name: "Hand Tossed", calories: "130–240", note: "" },
-          { name: "Crunchy Thin", calories: "100–150", note: "" },
-          { name: "New York Style", calories: "120–170", note: "" }
+          { name: "Hand Tossed", note: "" },
+          { name: "Crunchy Thin", note: "" },
+          { name: "New York Style", note: "" }
         ];
       case '16"':
         return [
-          { name: "Hand Tossed", calories: "130–240", note: "" },
-          { name: "New York Style", calories: "120–170", note: "" }
+          { name: "Hand Tossed", note: "" },
+          { name: "New York Style", note: "" }
         ];
       default:
         return [
-          { name: "Hand Tossed", calories: "130–240", note: "" },
-          { name: "Crunchy Thin", calories: "100–150", note: "" },
-          { name: "Gluten Free Crust", calories: "160", note: "$2 more. Not recommended for customers with celiac disease" }
+          { name: "Hand Tossed", note: "" },
+          { name: "Crunchy Thin", note: "" },
+          { name: "Gluten Free Crust", note: "$2 more. Not recommended for customers with celiac disease" }
         ];
     }
   };
 
   const toppings = [
-    { name: "Fresh Mushrooms", calories: "5" },
-    { name: "Fresh Onions", calories: "5–10" },
-    { name: "Black Olives", calories: "10–35" },
-    { name: "Jalapenos", calories: "0–5" },
-    { name: "Fresh Green Peppers", calories: "0–5" },
-    { name: "Roasted Red Peppers", calories: "0–5" },
-    { name: "Banana Peppers", calories: "0–5" },
-    { name: "Diced Tomatoes", calories: "0–5" },
-    { name: "Fresh Spinach", calories: "0–5" },
-    { name: "Pepperoni", calories: "25–70" },
-    { name: "Bacon", calories: "45–100" },
-    { name: "Ham", calories: "10–25" },
-    { name: "Beef", calories: "35–100" },
-    { name: "Premium Chicken", calories: "20–45" },
-    { name: "Italian Sausage", calories: "45–120" },
-    { name: "Philly Steak", calories: "15–35" },
-    { name: "Pineapple", calories: "10–20" },
-    { name: "Cheddar Cheese", calories: "15–60" },
-    { name: "Shredded Provolone Cheese", calories: "15–60" },
-    { name: "Shredded Parmesan-Asiago", calories: "20–45" },
-    { name: "Feta Cheese", calories: "10–30" },
-    { name: "Hot Buffalo Sauce", calories: "0–5" }
+    "Fresh Mushrooms",
+    "Fresh Onions", 
+    "Black Olives",
+    "Jalapenos",
+    "Fresh Green Peppers",
+    "Roasted Red Peppers",
+    "Banana Peppers",
+    "Diced Tomatoes",
+    "Fresh Spinach",
+    "Pepperoni",
+    "Bacon",
+    "Ham", 
+    "Beef",
+    "Premium Chicken",
+    "Italian Sausage",
+    "Philly Steak",
+    "Pineapple",
+    "Cheddar Cheese",
+    "Shredded Provolone Cheese",
+    "Shredded Parmesan-Asiago",
+    "Feta Cheese",
+    "Hot Buffalo Sauce"
   ];
 
   return (
@@ -133,7 +133,7 @@ export default function BuildYourOwnPizzaPage({ categories }: BuildYourOwnPizzaP
         <div className="bg-white text-cyan-700 py-3 px-4">
           <div className="max-w-lg mx-auto flex items-center">
             <Link 
-              to="/category/specialty-pizzas" 
+              to="/" 
               className="inline-flex items-center text-cyan-700 hover:text-cyan-800 mr-4 transition-colors touch-manipulation"
             >
               <ArrowLeft className="w-5 h-5 mr-2" />
@@ -155,32 +155,29 @@ export default function BuildYourOwnPizzaPage({ categories }: BuildYourOwnPizzaP
       </div>
 
       {/* Content */}
-      <main className="py-4 px-3 pb-8">
+      <main className="max-w-4xl mx-auto py-4 px-3 pb-8">
         <div className="space-y-6">
           
           {/* Pizza Image and Price Section */}
-          <div className="bg-white rounded-lg shadow-md border border-gray-100 p-6 text-center">
+          <div className="bg-white rounded-lg shadow-md border border-gray-100 p-6 lg:p-8 text-center">
             <div className="mb-4">
               <img 
                 src="/images/pizzas/build.png"
                 alt="Build Your Own Pizza"
-                className="w-32 h-32 mx-auto object-contain"
+                className="w-32 h-32 lg:w-40 lg:h-40 mx-auto object-contain"
               />
             </div>
-            <h2 className="text-xl font-bold text-gray-800 mb-2">Build Your Own Pizza</h2>
-            <div className="text-3xl font-bold text-red-600 mb-2">{getPrice()}</div>
-            <div className="text-sm text-gray-600">
-              {sizeOptions.find(option => option.size === selectedSize)?.description}
-            </div>
+            <h2 className="text-xl lg:text-2xl font-bold text-gray-800 mb-2">Build Your Own Pizza</h2>
+            <div className="text-3xl lg:text-4xl font-bold text-red-600 mb-2">{getPrice()}</div>
           </div>
           
           {/* Size & Crust Section */}
           <div className="bg-white rounded-lg shadow-md border border-gray-100">
-            <div className="bg-cyan-700 text-white px-4 py-3 rounded-t-lg">
-              <h2 className="text-lg font-bold">1. SIZE & CRUST</h2>
+            <div className="bg-cyan-700 text-white px-4 lg:px-6 py-3 rounded-t-lg">
+              <h2 className="text-lg lg:text-xl font-bold">1. SIZE & CRUST</h2>
             </div>
-            <div className="p-4">
-              <div className="flex justify-center items-end gap-4 mb-6">
+            <div className="p-4 lg:p-6">
+              <div className="flex justify-center items-end gap-4 sm:gap-6 mb-6">
                 {sizeOptions.map((option, index) => (
                   <button
                     key={index}
@@ -214,57 +211,41 @@ export default function BuildYourOwnPizzaPage({ categories }: BuildYourOwnPizzaP
               </div>
               
               <div className="space-y-3">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="font-semibold text-gray-800 border-b border-gray-300 pb-2">Crust Type</div>
-                  <div className="font-semibold text-gray-800 border-b border-gray-300 pb-2">Calories</div>
-                  {getCrustOptions().map((crust, index) => (
-                    <>
-                      <div key={`${index}-name`} className="flex flex-col">
-                        <div className="flex items-center text-gray-700 mb-1">
-                          <span className="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>
-                          {crust.name}
-                        </div>
-                        {crust.note && (
-                          <div className="text-xs text-red-600 ml-5 font-medium">
-                            {crust.note}
-                          </div>
-                        )}
+                {getCrustOptions().map((crust, index) => (
+                  <div key={index} className="flex flex-col">
+                    <div className="flex items-center text-gray-700 mb-1">
+                      <span className="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>
+                      {crust.name}
+                    </div>
+                    {crust.note && (
+                      <div className="text-xs text-red-600 ml-5 font-medium">
+                        {crust.note}
                       </div>
-                      <div key={`${index}-calories`} className="text-gray-600 flex items-start pt-1">
-                        {crust.calories}
-                      </div>
-                    </>
-                  ))}
-                </div>
+                    )}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
 
           {/* Cheese Section */}
           <div className="bg-white rounded-lg shadow-md border border-gray-100">
-            <div className="bg-cyan-700 text-white px-4 py-3 rounded-t-lg">
-              <h2 className="text-lg font-bold">2. CHEESE AMOUNT</h2>
+            <div className="bg-cyan-700 text-white px-4 lg:px-6 py-3 rounded-t-lg">
+              <h2 className="text-lg lg:text-xl font-bold">2. CHEESE AMOUNT</h2>
             </div>
-            <div className="p-4">
+            <div className="p-4 lg:p-6">
               <div className="space-y-3">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="font-semibold text-gray-800 border-b border-gray-300 pb-2">Amount</div>
-                  <div className="font-semibold text-gray-800 border-b border-gray-300 pb-2">Calories</div>
-                  <div className="flex items-center text-gray-700">
-                    <span className="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>
-                    Light
-                  </div>
-                  <div className="text-gray-600">30–140</div>
-                  <div className="flex items-center text-gray-700">
-                    <span className="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>
-                    Normal
-                  </div>
-                  <div className="text-gray-600">45–150</div>
-                  <div className="flex items-center text-gray-700">
-                    <span className="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>
-                    Extra
-                  </div>
-                  <div className="text-gray-600">60–180</div>
+                <div className="flex items-center text-gray-700">
+                  <span className="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>
+                  Light
+                </div>
+                <div className="flex items-center text-gray-700">
+                  <span className="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>
+                  Normal
+                </div>
+                <div className="flex items-center text-gray-700">
+                  <span className="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>
+                  Extra
                 </div>
               </div>
             </div>
@@ -272,39 +253,30 @@ export default function BuildYourOwnPizzaPage({ categories }: BuildYourOwnPizzaP
 
           {/* Sauce Section */}
           <div className="bg-white rounded-lg shadow-md border border-gray-100">
-            <div className="bg-cyan-700 text-white px-4 py-3 rounded-t-lg">
-              <h2 className="text-lg font-bold">3. SAUCE</h2>
+            <div className="bg-cyan-700 text-white px-4 lg:px-6 py-3 rounded-t-lg">
+              <h2 className="text-lg lg:text-xl font-bold">3. SAUCE</h2>
             </div>
-            <div className="p-4">
+            <div className="p-4 lg:p-6">
               <div className="space-y-3">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="font-semibold text-gray-800 border-b border-gray-300 pb-2">Sauce Type</div>
-                  <div className="font-semibold text-gray-800 border-b border-gray-300 pb-2">Calories</div>
-                  <div className="flex items-center text-gray-700">
-                    <span className="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>
-                    Robust Tomato
-                  </div>
-                  <div className="text-gray-600">5–20</div>
-                  <div className="flex items-center text-gray-700">
-                    <span className="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>
-                    Honey BBQ
-                  </div>
-                  <div className="text-gray-600">15–40</div>
-                  <div className="flex items-center text-gray-700">
-                    <span className="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>
-                    Alfredo
-                  </div>
-                  <div className="text-gray-600">15–60</div>
-                  <div className="flex items-center text-gray-700">
-                    <span className="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>
-                    Ranch
-                  </div>
-                  <div className="text-gray-600">50–120</div>
-                  <div className="flex items-center text-gray-700">
-                    <span className="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>
-                    Garlic Parmesan
-                  </div>
-                  <div className="text-gray-600">50–120</div>
+                <div className="flex items-center text-gray-700">
+                  <span className="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>
+                  Robust Tomato
+                </div>
+                <div className="flex items-center text-gray-700">
+                  <span className="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>
+                  Honey BBQ
+                </div>
+                <div className="flex items-center text-gray-700">
+                  <span className="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>
+                  Alfredo
+                </div>
+                <div className="flex items-center text-gray-700">
+                  <span className="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>
+                  Ranch
+                </div>
+                <div className="flex items-center text-gray-700">
+                  <span className="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>
+                  Garlic Parmesan
                 </div>
               </div>
             </div>
@@ -312,29 +284,19 @@ export default function BuildYourOwnPizzaPage({ categories }: BuildYourOwnPizzaP
 
           {/* Toppings Section */}
           <div className="bg-white rounded-lg shadow-md border border-gray-100">
-            <div className="bg-cyan-700 text-white px-4 py-3 rounded-t-lg">
-              <h2 className="text-lg font-bold">4. TOPPINGS</h2>
+            <div className="bg-cyan-700 text-white px-4 lg:px-6 py-3 rounded-t-lg">
+              <h2 className="text-lg lg:text-xl font-bold">4. TOPPINGS</h2>
             </div>
-            <div className="p-4">
+            <div className="p-4 lg:p-6">
               <p className="text-sm text-red-600 font-medium mb-4">Each Additional Topping: $2.50</p>
               
-              <div className="grid grid-cols-1 gap-4">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="font-semibold text-gray-800 border-b border-gray-300 pb-2">Topping</div>
-                  <div className="font-semibold text-gray-800 border-b border-gray-300 pb-2">Calories</div>
-                </div>
-                
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2">
-                  {toppings.map((topping, index) => (
-                    <div key={index} className="grid grid-cols-2 gap-4 py-1">
-                      <div className="flex items-center text-gray-700 text-sm">
-                        <span className="w-2 h-2 bg-gray-400 rounded-full mr-2 flex-shrink-0"></span>
-                        <span className="truncate">{topping.name}</span>
-                      </div>
-                      <div className="text-gray-600 text-sm">{topping.calories}</div>
-                    </div>
-                  ))}
-                </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-2 gap-x-4">
+                {toppings.map((topping, index) => (
+                  <div key={index} className="flex items-center text-gray-700 text-sm py-1">
+                    <span className="w-2 h-2 bg-gray-400 rounded-full mr-2 flex-shrink-0"></span>
+                    <span className="truncate">{topping}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

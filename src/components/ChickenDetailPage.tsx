@@ -19,7 +19,15 @@ export default function ChickenDetailPage({ categories }: ChickenDetailPageProps
     'bone-in-wings': {
       name: "Bone-In Wings",
       image: "/images/chicken/bone_in_wings.png",
-      description: "Marinated and oven-baked.\nAvailable plain (Cal: 250), or smothered with your choice of hot buffalo (Cal: 260), honey BBQ (Cal: 310), garlic Parmesan (Cal: 390) or sweet mango habanero (Cal: 310)\n(Serving Size: 4-pc)",
+      description: "Marinated and oven-baked.",
+      options: [
+        { name: "Plain", calories: "250" },
+        { name: "Hot buffalo", calories: "260" },
+        { name: "Honey BBQ", calories: "310" },
+        { name: "Garlic Parmesan", calories: "390" },
+        { name: "Sweet mango habanero", calories: "310" }
+      ],
+      servingSize: "4-pc",
       pricing: "8 for $9.99 • 16 for $16.99 • 32 for $32.99",
       hasSelection: true
     },
@@ -49,8 +57,8 @@ export default function ChickenDetailPage({ categories }: ChickenDetailPageProps
     }
     switch (selectedSize) {
       case '8': return "$9.99";
-      case '16': return "$16.99";
-      case '32': return "$32.99";
+      case '16': return "$17.99";
+      case '32': return "$33.99";
       default: return "$9.99";
     }
   };
@@ -167,20 +175,46 @@ export default function ChickenDetailPage({ categories }: ChickenDetailPageProps
 
             {/* Description */}
             <div className="text-gray-700 text-sm leading-relaxed">
-              {item.description.split('\n').map((line, index) => (
-                <p key={index} className={index > 0 ? 'mt-2' : ''}>
-                  {line.includes('(Serving Size:') ? (
-                    <>
-                      {line.split('(Serving Size:')[0]}
-                      <span className="font-bold text-gray-800">
-                        (Serving Size:{line.split('(Serving Size:')[1]}
-                      </span>
-                    </>
-                  ) : (
-                    line
-                  )}
-                </p>
-              ))}
+              {/* Handle special formatting for bone-in-wings */}
+              {slug === 'bone-in-wings' ? (
+                <div className="space-y-4">
+                  <p>{item.description}</p>
+                  
+                  <div>
+                    <p className="font-semibold text-gray-800 mb-3">Available Options:</p>
+                    <div className="space-y-2 ml-4">
+                      {('options' in item ? item.options : []).map((option: any, index: number) => (
+                        <div key={index} className="flex justify-between items-center py-1">
+                          <span className="text-gray-700">{option.name}</span>
+                          <span className="text-gray-600 text-xs bg-gray-100 px-2 py-1 rounded">
+                            Cal: {option.calories}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <p className="font-semibold text-gray-800">
+                    (Serving Size: {'servingSize' in item ? item.servingSize : ''})
+                  </p>
+                </div>
+              ) : (
+                /* Regular description for other items */
+                item.description.split('\n').map((line, index) => (
+                  <p key={index} className={index > 0 ? 'mt-2' : ''}>
+                    {line.includes('(Serving Size:') ? (
+                      <>
+                        {line.split('(Serving Size:')[0]}
+                        <span className="font-bold text-gray-800">
+                          (Serving Size:{line.split('(Serving Size:')[1]}
+                        </span>
+                      </>
+                    ) : (
+                      line
+                    )}
+                  </p>
+                ))
+              )}
             </div>
           </div>
         </div>

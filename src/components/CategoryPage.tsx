@@ -142,7 +142,7 @@ export default function CategoryPage({ categories }: CategoryPageProps) {
   const loadedTotsItems = [
     {
       name: "Philly Cheesesteak",
-      price: "$6.99",
+      price: "$8.99",
       calories: "Cal: 780",
       description: "Crispy tots loaded with tender steak, peppers, onions, and melted cheese",
       image: "/images/loaded_tots/F_PHLLYSTK.jpg",
@@ -150,7 +150,7 @@ export default function CategoryPage({ categories }: CategoryPageProps) {
     },
     {
       name: "Melty 3-Cheese",
-      price: "$6.99",
+      price: "$8.99",
       calories: "Cal: 730",
       description: "Golden tots topped with a blend of three melted cheeses",
       image: "/images/loaded_tots/F_M3CHEESE.jpg",
@@ -158,7 +158,7 @@ export default function CategoryPage({ categories }: CategoryPageProps) {
     },
     {
       name: "Cheddar Bacon",
-      price: "$6.93",
+      price: "$8.99",
       calories: "Cal: 740",
       description: "Crispy tots loaded with sharp cheddar cheese and crispy bacon bits",
       image: "/images/loaded_tots/F_CHEDBCN.jpg",
@@ -173,7 +173,7 @@ export default function CategoryPage({ categories }: CategoryPageProps) {
    const sandwichesItems = [
     {
       name: "Philly Cheese Steak",
-      price: "$7.99",
+      price: "$8.99",
       calories: "Cal: 380",
       description: "Tender slices of steak, American and provolone cheeses, fresh onions, fresh green peppers and fresh mushrooms.",
       image: "/images/sandwitches/S_PHIL.jpg",
@@ -181,7 +181,7 @@ export default function CategoryPage({ categories }: CategoryPageProps) {
     },
     {
       name: "Chicken Bacon Ranch",
-      price: "$7.99",
+      price: "$8.99",
       calories: "Cal: 450",
       description: "Grilled chicken breast, smoked bacon, creamy ranch and provolone cheese.",
       image: "/images/sandwitches/S_CHIKKBR.jpg",
@@ -189,7 +189,7 @@ export default function CategoryPage({ categories }: CategoryPageProps) {
     },
     {
       name: "Italian",
-      price: "$7.99",
+      price: "$8.99",
       calories: "Cal: 430",
       description: "Pepperoni and ham topped with banana peppers, fresh green peppers, fresh onions and provolone cheese.",
       image: "/images/sandwitches/S_ITALIAN.jpg",
@@ -197,7 +197,7 @@ export default function CategoryPage({ categories }: CategoryPageProps) {
     },
      {
       name: "Chicken Parm",
-      price: "$7.99",
+      price: "$8.99",
       calories: "Cal: 400",
       description: "Grilled chicken breast, tomato-basil marinara, Parmesan-Asiago and provolone cheeses.",
       image: "/images/sandwitches/S_CHIKP.jpg",
@@ -205,7 +205,7 @@ export default function CategoryPage({ categories }: CategoryPageProps) {
     },
      {
        name: "Buffalo Chicken",
-       price: "$7.99",
+       price: "$8.99",
       calories: "Cal: 430",
       description: "Grilled chicken breast, creamy blue cheese sauce, fresh onions, hot buffalo sauce, provolone, cheddar and cheese made with 100% real mozzarella.",
       image: "/images/sandwitches/S_BUFC.jpg",
@@ -213,7 +213,7 @@ export default function CategoryPage({ categories }: CategoryPageProps) {
      },
      {
        name: "Chicken Habanero",
-       price: "$7.99",
+       price: "$8.99",
       calories: "Cal: 390",
       description: "Grilled chicken breast, pineapple, jalapeños, sweet mango habanero sauce, provolone, cheddar and cheese made with 100% real mozzarella.",
       image: "/images/sandwitches/S_CHHB.jpg",
@@ -254,36 +254,28 @@ export default function CategoryPage({ categories }: CategoryPageProps) {
 
   const dipsBreadItems = [
     {
-      name: "Five Cheese Dip & Bread Twists Combo",
-      description: "A combination of cheddar, Asiago, Parmesan, American and Pizza cheeses oven baked to perfection. Paired with Parmesan or Garlic Twists.",
-      price: "$9.99 • Dip Only $3.99",
-      calories: "350–360",
-      image: "/images/dip_breads/P_FVCHPAIR.jpg",
-      slug: "five-cheese-dip-bread-twists"
-    },
-    {
-      name: "Cheesy Marinara Dip & Bread Twists Combo",
-      description: "Layers of flavorful marinara sauce oven baked with creamy, melted cheeses. Paired with Parmesan or Garlic Twists.",
-      price: "$9.99 • Dip Only $3.99",
-      calories: "290–300",
-      image: "/images/dip_breads/P_MARPAIR.jpg",
-      slug: "cheesy-marinara-dip-bread-twists"
-    },
-    {
-      name: "Bread Twists",
-      description: "Handmade from fresh buttery-tasting dough and baked to a golden brown. Try all three: garlic, Parmesan or cinnamon varieties.",
-      price: "8 for $7.99",
-      calories: "220 - 250",
-      image: "/images/dip_breads/F_GARLICT.jpg",
-      slug: "bread-twists"
-    },
-    {
       name: "Parmesan Bread Bites",
       description: "Oven-baked bread bites handmade from fresh buttery-tasting dough and seasoned with garlic and Parmesan.",
-      price: "16 for $7.99 • 32 for $13.99",
+      price: "16 for $8.99 • 32 for $14.99",
       calories: "220",
       image: "/images/dip_breads/F_PBITES.jpg",
       slug: "parmesan-bread-bites"
+    },
+    {
+      name: "Garlic Bites",
+      description: "Oven-baked bread bites handmade from fresh buttery-tasting dough and seasoned with savory garlic and herbs.",
+      price: "16 for $8.99 • 32 for $14.99",
+      calories: "210",
+      image: "/images/dip_breads/F_PBITES.jpg",
+      slug: "garlic-bites"
+    },
+    {
+      name: "Cinnamon Bites",
+      description: "Oven-baked bread bites handmade from fresh buttery-tasting dough and seasoned with sweet cinnamon and sugar.",
+      price: "16 for $8.99 • 32 for $14.99",
+      calories: "240",
+      image: "/images/dip_breads/F_PBITES.jpg",
+      slug: "cinnamon-bites"
     },
     {
       name: "Stuffed Cheesy Bread",
@@ -313,6 +305,22 @@ export default function CategoryPage({ categories }: CategoryPageProps) {
       calories: "Cal: 220",
       image: "/images/salads/F_CCAESAR.jpg",
       slug: "chicken-caesar"
+    },
+    {
+      name: "Five Cheese Mac & Cheese",
+      description: "Creamy macaroni and cheese made with five different cheeses for the ultimate comfort food experience.",
+      price: "$8.99",
+      calories: "Cal: 450",
+      image: "/images/salads/F_GARDEN.jpg", // Temporary placeholder
+      slug: "five-cheese-mac-cheese"
+    },
+    {
+      name: "Spicy Buffalo Mac & Cheese",
+      description: "Macaroni and cheese with a spicy buffalo kick, topped with crispy breadcrumbs and green onions.",
+      price: "$9.99",
+      calories: "Cal: 480",
+      image: "/images/salads/F_GARDEN.jpg", // Temporary placeholder
+      slug: "spicy-buffalo-mac-cheese"
     }
   ];
 
@@ -328,7 +336,7 @@ export default function CategoryPage({ categories }: CategoryPageProps) {
     {
       name: "Chocolate Lava Crunch Cakes",
       description: "Oven-baked chocolate cakes, crunchy on the outside with molten chocolate fudge on the inside.",
-      price: "3 for $8.99",
+      price: "3 for 9.99",
       calories: "Cal: 350",
       image: "/images/desserts/F_LAVA.jpg",
       slug: "chocolate-lava-crunch-cakes"
@@ -336,7 +344,7 @@ export default function CategoryPage({ categories }: CategoryPageProps) {
     {
       name: "Domino's Marbled Cookie Brownie™",
       description: "An irresistibly warm and gooey blend of milk chocolate chunk cookie and fudge brownie. This sharable dessert is oven-baked at the time of order and cut into 9 pieces.",
-      price: "9 for $8.99",
+      price: "9 for $9.99",
       calories: "Cal: 200",
       image: "/images/desserts/F_MRBRWNE.jpg",
       slug: "marbled-cookie-brownie"
@@ -344,13 +352,6 @@ export default function CategoryPage({ categories }: CategoryPageProps) {
   ];
 
   const extrasItems = [
-    {
-      name: "Drinks",
-      description: "Refreshing beverages to complement your meal",
-      price: "$2.49 - 3.99",
-      calories: "Various sizes",
-      image: "/images/extras/drinks.png"
-    },
     {
       name: "Dipping Cups",
       description: "Delicious sauces and dips for your food",
@@ -494,41 +495,6 @@ export default function CategoryPage({ categories }: CategoryPageProps) {
           <h1 className="text-xl sm:text-2xl font-bold leading-tight text-gray-800 uppercase text-left">DOMINO'S {category.name}</h1>
         </div>
       </div>
-
-      {/* Build Your Own Pizza Section - Only for Specialty Pizzas */}
-      {category.slug === 'specialty-pizzas' && (
-        <div className="py-4 px-3">
-          <Link to="/build-your-own-pizza" className="block">
-            <div className="bg-white rounded-lg shadow-md transition-shadow duration-200 overflow-hidden border border-gray-100 hover:shadow-lg">
-              <div className="p-4">
-                <div className="flex items-start space-x-3 mb-3">
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-lg font-bold text-cyan-700 leading-tight mb-3">Build Your Own Pizza</h3>
-                    <div className="grid grid-cols-2 gap-2 text-sm">
-                      <div className="flex items-center">
-                        <span className="text-cyan-700 font-semibold underline">Parmesan Stuffed Crust</span>
-                        <span className="ml-2 bg-red-500 text-white text-xs px-1.5 py-0.5 rounded font-bold">NEW!</span>
-                      </div>
-                      <div className="text-cyan-700 font-semibold underline">Hand Tossed</div>
-                      <div className="text-cyan-700 font-semibold underline">Handmade Pan</div>
-                      <div className="text-cyan-700 font-semibold underline">Crunchy Thin Crust</div>
-                      <div className="text-cyan-700 font-semibold underline">Gluten Free Crust</div>
-                      <div className="text-cyan-700 font-semibold underline">New York Style</div>
-                    </div>
-                  </div>
-                  <div className="flex-shrink-0">
-                    <img 
-                      src="/images/pizzas/build.png"
-                      alt="Build Your Own Pizza"
-                      className="w-20 h-20 object-contain rounded-lg"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Link>
-        </div>
-      )}
 
       {/* Menu Items */}
       <main className="py-4 px-3 pb-8">

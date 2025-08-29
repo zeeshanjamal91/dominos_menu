@@ -17,37 +17,37 @@ export default function SandwichesDetailPage({ categories }: SandwichesDetailPag
     'philly-cheese-steak': {
       name: "Philly Cheese Steak",
       image: "/images/sandwitches/S_PHIL.jpg",
-      price: "$7.99",
+      price: "$8.99",
       description: "Tender slices of steak, American and provolone cheeses, fresh onions, fresh green peppers and fresh mushrooms."
     },
     'chicken-bacon-ranch': {
       name: "Chicken Bacon Ranch",
       image: "/images/sandwitches/S_CHIKKBR.jpg",
-      price: "$7.99",
+      price: "$8.99",
       description: "Grilled chicken breast, smoked bacon, creamy ranch and provolone cheese."
     },
     'italian': {
       name: "Italian",
       image: "/images/sandwitches/S_ITALIAN.jpg",
-      price: "$7.99",
+      price: "$8.99",
       description: "Pepperoni and ham topped with banana peppers, fresh green peppers, fresh onions and provolone cheese."
     },
     'chicken-parm': {
       name: "Chicken Parm",
       image: "/images/sandwitches/S_CHIKP.jpg",
-      price: "$7.99",
+      price: "$8.99",
       description: "Grilled chicken breast, tomato-basil marinara, Parmesan-Asiago and provolone cheeses."
     },
     'buffalo-chicken': {
       name: "Buffalo Chicken",
       image: "/images/sandwitches/S_BUFC.jpg",
-      price: "$7.99",
+      price: "$8.99",
       description: "Grilled chicken breast, creamy blue cheese sauce, fresh onions, hot buffalo sauce, provolone, cheddar and cheese made with 100% real mozzarella."
     },
     'chicken-habanero': {
       name: "Chicken Habanero",
       image: "/images/sandwitches/S_CHHB.jpg",
-      price: "$7.99",
+      price: "$8.99",
       description: "Grilled chicken breast, pineapple, jalapeños, sweet mango habanero sauce, provolone, cheddar and cheese made with 100% real mozzarella."
     }
   };

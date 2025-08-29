@@ -13,18 +13,14 @@ export default function DrinksDetailPage({ categories }: DrinksDetailPageProps) 
   const drinkItems = [
     {
       name: "2-Liter Bottle",
-      size: "12 oz",
       price: "$3.99",
-      calories: "Coke/Sprite: 140–240, Diet Coke: 0",
-      description: "Perfect for sharing with family and friends",
+      description: "Available flavors: Coke, Sprite, Root Beer, Canada Dry, Diet Coke, Fanta, Lemonade, Orange",
       image: "/images/extras/drinks.png"
     },
     {
       name: "20 oz Bottle",
-      size: "1 bottle",
-      price: "$2.49",
-      calories: "Coke/Sprite: 140–240, Diet Coke: 0",
-      description: "Individual serving size for on-the-go",
+      price: "$2.79",
+      description: "Available flavors: Canada Dry, Orange, Diet Coke, Sprite, Coke",
       image: "/images/extras/drinks.png"
     }
   ];
@@ -70,7 +66,7 @@ export default function DrinksDetailPage({ categories }: DrinksDetailPageProps) 
         <div className="bg-white text-cyan-700 py-3 px-4">
           <div className="max-w-lg mx-auto flex items-center">
             <Link 
-              to="/category/extras" 
+              to="/" 
               className="inline-flex items-center text-cyan-700 hover:text-cyan-800 mr-4 transition-colors touch-manipulation"
             >
               <ArrowLeft className="w-5 h-5 mr-2" />
@@ -93,26 +89,43 @@ export default function DrinksDetailPage({ categories }: DrinksDetailPageProps) 
 
       {/* Drink Items */}
       <main className="py-4 px-3 pb-8">
-        <div className="space-y-4">
+        <div className="space-y-6">
           {drinkItems.map((item, index) => (
-            <div key={index} className="block bg-white rounded-lg shadow-md transition-shadow duration-200 overflow-hidden border border-gray-100">
-              <div className="p-4">
-                <div className="flex items-start space-x-3 mb-3">
+            <div key={index} className="bg-white rounded-xl shadow-lg transition-shadow duration-200 overflow-hidden border border-gray-100">
+              <div className="p-6">
+                {/* Header Row with Image */}
+                <div className="flex items-start space-x-6 mb-4">
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-lg font-bold text-gray-800 leading-tight mb-1">{item.name}</h3>
-                    <p className="text-gray-600 text-sm mb-2">{item.description}</p>
-                    <div className="flex flex-col space-y-1">
-                      <span className="text-xl font-bold text-cyan-700">{item.price}</span>
-                      <span className="text-sm text-gray-500">{item.size}</span>
-                      <span className="text-sm text-gray-600">{item.calories}</span>
+                    <h3 className="text-2xl font-bold text-gray-800 leading-tight mb-3">{item.name}</h3>
+                    <div className="mb-4">
+                      <span className="text-2xl font-bold text-cyan-700 bg-cyan-50 px-3 py-1 rounded-lg">{item.price}</span>
                     </div>
                   </div>
                   <div className="flex-shrink-0">
-                    <img 
-                      src={item.image}
-                      alt={item.name}
-                      className="w-20 h-20 object-contain rounded-lg"
-                    />
+                    <div className="bg-gradient-to-br from-cyan-50 to-blue-50 p-4 rounded-xl border-2 border-cyan-100">
+                      <img 
+                        src={item.image}
+                        alt={item.name}
+                        className="w-24 h-24 object-contain"
+                      />
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Flavors Section */}
+                <div className="bg-gradient-to-r from-gray-50 to-gray-100 p-4 rounded-xl border border-gray-200">
+                  <div className="flex items-start space-x-3">
+                    <div className="flex-shrink-0 mt-1">
+                      <div className="w-3 h-3 bg-cyan-500 rounded-full"></div>
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-gray-700 leading-relaxed">
+                        <span className="font-bold text-gray-800 text-base">Available Flavors:</span><br />
+                        <span className="text-gray-600 text-sm mt-1 inline-block">
+                          {item.description.replace("Available flavors: ", "").split(", ").join(" • ")}
+                        </span>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -17,6 +17,12 @@ import BuildYourOwnPizzaPage from './components/BuildYourOwnPizzaPage';
 function App() {
   const menuCategories = [
     {
+      name: "Build Your Own Pizza",
+      slug: "build-your-own-pizza",
+      image: "/images/categories/build.png",
+      description: "Create your perfect pizza with your favorite toppings"
+    },
+    {
       name: "Specialty Pizzas",
       slug: "specialty-pizzas",
       image: "/images/categories/specialty.png",
@@ -63,6 +69,12 @@ function App() {
       slug: "desserts",
       image: "/images/categories/dessert.png",
       description: "Warm, rich, and shareable desserts baked to satisfy every sweet craving"
+    },
+    {
+      name: "Drinks",
+      slug: "drinks",
+      image: "/images/extras/drinks.png",
+      description: "Refreshing beverages to complement your meal"
     },
     {
       name: "Extras",
@@ -127,26 +139,60 @@ function App() {
           {menuCategories.map((category, index) => (
             <Link
               key={index}
-              to={`/category/${category.slug}`}
+              to={category.slug === 'build-your-own-pizza' ? '/build-your-own-pizza' : 
+                  category.slug === 'drinks' ? '/drinks' : 
+                  `/category/${category.slug}`}
               className="block bg-white rounded-lg shadow-md active:shadow-lg transition-shadow duration-200 overflow-hidden group cursor-pointer border border-gray-100"
             >
-              <div className="flex items-center p-4">
-                <div className="flex-1">
-                  <h2 className="text-lg sm:text-xl font-bold text-cyan-700 mb-1 group-active:text-cyan-800 transition-colors">
-                    {category.name}
-                  </h2>
-                  <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
-                    {category.description}
-                  </p>
+              {category.slug === 'build-your-own-pizza' ? (
+                // Special layout for Build Your Own Pizza
+                <div className="p-4">
+                  <div className="flex items-start space-x-3 mb-3">
+                    <div className="flex-1 min-w-0">
+                      <h2 className="text-lg sm:text-xl font-bold text-cyan-700 mb-3 group-active:text-cyan-800 transition-colors">
+                        {category.name}
+                      </h2>
+                      <div className="grid grid-cols-2 gap-2 text-sm">
+                        <div className="flex items-center">
+                          <span className="text-cyan-700 font-semibold underline">Parmesan Stuffed Crust</span>
+                          <span className="ml-2 bg-red-500 text-white text-xs px-1.5 py-0.5 rounded font-bold">NEW!</span>
+                        </div>
+                        <div className="text-cyan-700 font-semibold underline">Hand Tossed</div>
+                        <div className="text-cyan-700 font-semibold underline">Handmade Pan</div>
+                        <div className="text-cyan-700 font-semibold underline">Crunchy Thin Crust</div>
+                        <div className="text-cyan-700 font-semibold underline">Gluten Free Crust</div>
+                        <div className="text-cyan-700 font-semibold underline">New York Style</div>
+                      </div>
+                    </div>
+                    <div className="flex-shrink-0">
+                      <img 
+                        src={category.image}
+                        alt={category.name}
+                        className="w-20 h-20 object-contain rounded-lg group-active:scale-105 transition-transform duration-200"
+                      />
+                    </div>
+                  </div>
                 </div>
-                <div className="ml-4 flex-shrink-0">
-                  <img 
-                    src={category.image}
-                    alt={category.name}
-                    className="w-16 h-16 sm:w-20 sm:h-20 object-contain rounded-lg group-active:scale-105 transition-transform duration-200"
-                  />
+              ) : (
+                // Regular layout for other categories
+                <div className="flex items-center p-4">
+                  <div className="flex-1">
+                    <h2 className="text-lg sm:text-xl font-bold text-cyan-700 mb-1 group-active:text-cyan-800 transition-colors">
+                      {category.name}
+                    </h2>
+                    <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+                      {category.description}
+                    </p>
+                  </div>
+                  <div className="ml-4 flex-shrink-0">
+                    <img 
+                      src={category.image}
+                      alt={category.name}
+                      className="w-16 h-16 sm:w-20 sm:h-20 object-contain rounded-lg group-active:scale-105 transition-transform duration-200"
+                    />
+                  </div>
                 </div>
-              </div>
+              )}
             </Link>
           ))}
         </div>
