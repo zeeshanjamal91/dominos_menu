@@ -141,6 +141,7 @@ function App() {
               key={index}
               to={category.slug === 'build-your-own-pizza' ? '/build-your-own-pizza' : 
                   category.slug === 'drinks' ? '/drinks' : 
+                  category.slug === 'extras' ? '/dipping-cups' :
                   `/category/${category.slug}`}
               className="block bg-white rounded-lg shadow-md active:shadow-lg transition-shadow duration-200 overflow-hidden group cursor-pointer border border-gray-100"
             >

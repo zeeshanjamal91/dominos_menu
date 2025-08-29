@@ -351,14 +351,14 @@ export default function CategoryPage({ categories }: CategoryPageProps) {
     }
   ];
 
-  const extrasItems = [
-    {
-      name: "Dipping Cups",
-      description: "Delicious sauces and dips for your food",
-      price: "$1",
-      calories: "Per cup",
-      image: "/images/categories/extras.png"
-    }
+  const extrasItems: Array<{
+    name: string;
+    description: string;
+    price: string;
+    calories: string;
+    image: string;
+  }> = [
+    // Empty array - Extras will redirect directly to dipping cups page
   ];
 
   // Chicken items

@@ -162,7 +162,7 @@ export default function BuildYourOwnPizzaPage({ categories }: BuildYourOwnPizzaP
           <div className="bg-white rounded-lg shadow-md border border-gray-100 p-6 lg:p-8 text-center">
             <div className="mb-4">
               <img 
-                src="/images/pizzas/build.png"
+                src="/images/categories/build.png"
                 alt="Build Your Own Pizza"
                 className="w-32 h-32 lg:w-40 lg:h-40 mx-auto object-contain"
               />
