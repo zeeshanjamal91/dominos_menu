@@ -13,6 +13,7 @@ import DrinksDetailPage from './components/DrinksDetailPage';
 import DippingCupsDetailPage from './components/DippingCupsDetailPage';
 import NotFoundPage from './components/NotFoundPage';
 import BuildYourOwnPizzaPage from './components/BuildYourOwnPizzaPage';
+import CouponsPage from './components/CouponsPage';
 
 function App() {
   const menuCategories = [
@@ -75,6 +76,12 @@ function App() {
       slug: "drinks",
       image: "/images/extras/drinks.png",
       description: "Refreshing beverages to complement your meal"
+    },
+    {
+      name: "Coupons",
+      slug: "coupons",
+      image: "/images/categories/coupons.png",
+      description: "Amazing deals and offers to save on your favorite meals"
     },
     {
       name: "Extras",
@@ -142,6 +149,7 @@ function App() {
               to={category.slug === 'build-your-own-pizza' ? '/build-your-own-pizza' : 
                   category.slug === 'drinks' ? '/drinks' : 
                   category.slug === 'extras' ? '/dipping-cups' :
+                  category.slug === 'coupons' ? '/coupons' :
                   `/category/${category.slug}`}
               className="block bg-white rounded-lg shadow-md active:shadow-lg transition-shadow duration-200 overflow-hidden group cursor-pointer border border-gray-100"
             >
@@ -302,6 +310,10 @@ function App() {
         <Route 
           path="/build-your-own-pizza" 
           element={<BuildYourOwnPizzaPage categories={menuCategories.map(cat => ({ name: cat.name, slug: cat.slug }))} />} 
+        />
+        <Route 
+          path="/coupons" 
+          element={<CouponsPage categories={menuCategories.map(cat => ({ name: cat.name, slug: cat.slug }))} />} 
         />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
