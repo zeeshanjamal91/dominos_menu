@@ -15,7 +15,7 @@ export default function DipsBreadsDetailPage({ categories }: DipsBreadsDetailPag
   
   // Set initial selection based on item type
   const getInitialSelection = () => {
-    if (slug === 'parmesan-bread-bites' || slug === 'garlic-bites' || slug === 'cinnamon-bites') {
+    if (slug === 'parmesan-bread-bites' || slug === 'garlic-bites') {
       return '16';
     }
     if (slug === 'stuffed-cheesy-bread') {
@@ -48,18 +48,6 @@ export default function DipsBreadsDetailPage({ categories }: DipsBreadsDetailPag
       pricing: {
         "16": { price: "16 for $8.99", calories: "Cal: 210" },
         "32": { price: "32 for $14.99", calories: "Cal: 210" }
-      },
-      hasSelection: true,
-      selectionType: "circular"
-    },
-    'cinnamon-bites': {
-      name: "Cinnamon Bites",
-      image: "/images/dip_breads/F_PBITES.jpg",
-      description: "Oven-baked bread bites handmade from fresh buttery-tasting dough and seasoned with sweet cinnamon and sugar.",
-      servingSize: "Serving Size: 4-pc",
-      pricing: {
-        "16": { price: "16 for $8.99", calories: "Cal: 240" },
-        "32": { price: "32 for $14.99", calories: "Cal: 240" }
       },
       hasSelection: true,
       selectionType: "circular"
@@ -213,7 +201,7 @@ export default function DipsBreadsDetailPage({ categories }: DipsBreadsDetailPag
             {item.hasSelection && (
               <div className="mb-6">
                 <div className="flex justify-center space-x-4">
-                  {(slug === 'parmesan-bread-bites' || slug === 'garlic-bites' || slug === 'cinnamon-bites') ? (
+                  {(slug === 'parmesan-bread-bites' || slug === 'garlic-bites') ? (
                     <>
                       <button
                         onClick={() => setSelectedSize('16')}

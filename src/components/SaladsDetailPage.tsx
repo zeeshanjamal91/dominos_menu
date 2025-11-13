@@ -31,24 +31,6 @@ export default function SaladsDetailPage({ categories }: SaladsDetailPageProps) 
       description: "The makings of a classic: roasted white meat chicken, Parmesan cheese and brioche garlic croutons, all atop a blend of romaine and iceberg lettuce.",
       servingSize: "Serving Size: 1 Bowl",
       hasDressings: true
-    },
-    'five-cheese-mac-cheese': {
-      name: "Five Cheese Mac & Cheese",
-      image: "/images/salads/F_GARDEN.jpg", // Temporary placeholder
-      price: "$8.99",
-      calories: "Cal: 450",
-      description: "Creamy macaroni and cheese made with five different cheeses for the ultimate comfort food experience.",
-      servingSize: "Serving Size: 1 Bowl",
-      hasDressings: true
-    },
-    'spicy-buffalo-mac-cheese': {
-      name: "Spicy Buffalo Mac & Cheese",
-      image: "/images/salads/F_GARDEN.jpg", // Temporary placeholder
-      price: "$9.99",
-      calories: "Cal: 480",
-      description: "Macaroni and cheese with a spicy buffalo kick, topped with crispy breadcrumbs and green onions.",
-      servingSize: "Serving Size: 1 Bowl",
-      hasDressings: true
     }
   };
 

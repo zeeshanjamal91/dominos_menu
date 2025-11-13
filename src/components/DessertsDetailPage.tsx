@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import HamburgerMenu from './HamburgerMenu';
+import { useState } from 'react';
 
 interface DessertsDetailPageProps {
   categories: Array<{
@@ -11,16 +12,30 @@ interface DessertsDetailPageProps {
 
 export default function DessertsDetailPage({ categories }: DessertsDetailPageProps) {
   const { slug } = useParams<{ slug: string }>();
+  
+  // Set initial selection based on item type
+  const getInitialSelection = () => {
+    if (slug === 'cinnamon-bites') {
+      return '16';
+    }
+    return '';
+  };
+  
+  const [selectedSize, setSelectedSize] = useState<string>(getInitialSelection());
 
   // Desserts items data
   const dessertItems = {
-    'cinnamon-bread-twists': {
-      name: "Cinnamon Bread Twists",
-      image: "/images/desserts/F_CINNAT.jpg",
-      price: "8 for $7.99",
-      calories: "Cal: 250",
-      description: "Handmade from fresh buttery-tasting dough and baked to a golden brown. Crispy on the outside and soft on the inside. Drizzled with a perfect blend of cinnamon and sugar, and served with a side of sweet icing.",
-      servingSize: "Serving Size: 2-pc"
+    'cinnamon-bites': {
+      name: "Cinnamon Bites",
+      image: "/images/dip_breads/F_PBITES.jpg",
+      description: "Oven-baked bread bites handmade from fresh buttery-tasting dough and seasoned with sweet cinnamon and sugar.",
+      servingSize: "Serving Size: 4-pc",
+      pricing: {
+        "16": { price: "16 for $8.99", calories: "Cal: 240" },
+        "32": { price: "32 for $14.99", calories: "Cal: 240" }
+      },
+      hasSelection: true,
+      selectionType: "circular"
     },
     'chocolate-lava-crunch-cakes': {
       name: "Chocolate Lava Crunch Cakes",
@@ -41,6 +56,24 @@ export default function DessertsDetailPage({ categories }: DessertsDetailPagePro
   };
 
   const item = dessertItems[slug as keyof typeof dessertItems];
+
+  // Get current price and calories based on selected size
+  const getCurrentInfo = () => {
+    if (!item) return { price: '', calories: '' };
+    
+    // For items with pricing object (like cinnamon-bites)
+    if ('pricing' in item && item.pricing) {
+      return item.pricing[selectedSize as keyof typeof item.pricing];
+    }
+    
+    // For items with direct price/calories
+    return {
+      price: 'price' in item ? item.price : '',
+      calories: 'calories' in item ? item.calories : ''
+    };
+  };
+
+  const currentInfo = getCurrentInfo();
 
   if (!item) {
     return (
@@ -128,13 +161,41 @@ export default function DessertsDetailPage({ categories }: DessertsDetailPagePro
             <div className="flex items-start justify-between mb-6">
               <h1 className="text-2xl font-bold text-gray-800 flex-1">{item.name}</h1>
               <div className="text-right">
-                <div className="text-2xl font-bold text-red-600">{item.price}</div>
-                <div className="text-sm text-gray-600 mt-1">{item.calories}</div>
+                <div className="text-2xl font-bold text-red-600">{currentInfo.price}</div>
+                <div className="text-sm text-gray-600 mt-1">{currentInfo.calories}</div>
               </div>
             </div>
 
+            {/* Size Selection */}
+            {'hasSelection' in item && item.hasSelection && (
+              <div className="mb-6">
+                <div className="flex justify-center space-x-6">
+                  <button
+                    onClick={() => setSelectedSize('16')}
+                    className={`w-16 h-16 rounded-full border-2 flex items-center justify-center transition-colors ${
+                      selectedSize === '16'
+                        ? 'bg-red-600 border-red-600 text-white'
+                        : 'bg-white border-gray-300 text-gray-700 hover:border-gray-400'
+                    }`}
+                  >
+                    <span className="text-lg font-bold">16</span>
+                  </button>
+                  <button
+                    onClick={() => setSelectedSize('32')}
+                    className={`w-16 h-16 rounded-full border-2 flex items-center justify-center transition-colors ${
+                      selectedSize === '32'
+                        ? 'bg-red-600 border-red-600 text-white'
+                        : 'bg-white border-gray-300 text-gray-700 hover:border-gray-400'
+                    }`}
+                  >
+                    <span className="text-lg font-bold">32</span>
+                  </button>
+                </div>
+              </div>
+            )}
+
             {/* Description */}
-            <div className="text-gray-700 text-sm leading-relaxed">
+            <div className="text-gray-700 text-sm leading-relaxed pt-6 border-t border-gray-200">
               <p className="mb-3">{item.description}</p>
               
               {/* Serving Size */}

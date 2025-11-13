@@ -55,6 +55,32 @@ export default function PennePastasDetailPage({ categories }: PennePastasDetailP
         tin: { price: "$7.99", calories: "Cal: 340 - 1070" },
         bowl: { price: "$8.99", calories: "Cal: 560 - 930" }
       }
+    },
+    'five-cheese-mac-cheese': {
+      name: "Five Cheese Mac & Cheese",
+      image: "/images/salads/F_GARDEN.jpg", // Temporary placeholder
+      description: "Creamy macaroni and cheese made with five different cheeses for the ultimate comfort food experience.",
+      servingSize: {
+        tin: "Serving Size: 1 Bowl",
+        bowl: "Serving Size: 1 Bowl"
+      },
+      pricing: {
+        tin: { price: "$8.99", calories: "Cal: 450" },
+        bowl: { price: "$8.99", calories: "Cal: 450" }
+      }
+    },
+    'spicy-buffalo-mac-cheese': {
+      name: "Spicy Buffalo Mac & Cheese",
+      image: "/images/salads/F_GARDEN.jpg", // Temporary placeholder
+      description: "Macaroni and cheese with a spicy buffalo kick, topped with crispy breadcrumbs and green onions.",
+      servingSize: {
+        tin: "Serving Size: 1 Bowl",
+        bowl: "Serving Size: 1 Bowl"
+      },
+      pricing: {
+        tin: { price: "$9.99", calories: "Cal: 480" },
+        bowl: { price: "$9.99", calories: "Cal: 480" }
+      }
     }
   };
 

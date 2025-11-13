@@ -174,7 +174,7 @@ export default function ChickenDetailPage({ categories }: ChickenDetailPageProps
             )}
 
             {/* Description */}
-            <div className="text-gray-700 text-sm leading-relaxed">
+            <div className="text-gray-700 text-sm leading-relaxed pt-6 border-t border-gray-200">
               {/* Handle special formatting for bone-in-wings */}
               {slug === 'bone-in-wings' ? (
                 <div className="space-y-4">

@@ -247,6 +247,22 @@ export default function CategoryPage({ categories }: CategoryPageProps) {
       calories: "Cal: 340 - 1070",
       image: "/images/penne_pasta/S_BUILD.jpg",
       slug: "build-your-own-pasta"
+    },
+     {
+      name: "Five Cheese Mac & Cheese",
+      description: "Creamy macaroni and cheese made with five different cheeses for the ultimate comfort food experience.",
+      price: "$8.99",
+      calories: "Cal: 450",
+      image: "/images/salads/F_GARDEN.jpg", // Temporary placeholder
+      slug: "five-cheese-mac-cheese"
+    },
+    {
+      name: "Spicy Buffalo Mac & Cheese",
+      description: "Macaroni and cheese with a spicy buffalo kick, topped with crispy breadcrumbs and green onions.",
+      price: "$9.99",
+      calories: "Cal: 480",
+      image: "/images/salads/F_GARDEN.jpg", // Temporary placeholder
+      slug: "spicy-buffalo-mac-cheese"
     }
   ];
 
@@ -270,17 +286,9 @@ export default function CategoryPage({ categories }: CategoryPageProps) {
       slug: "garlic-bites"
     },
     {
-      name: "Cinnamon Bites",
-      description: "Oven-baked bread bites handmade from fresh buttery-tasting dough and seasoned with sweet cinnamon and sugar.",
-      price: "16 for $8.99 • 32 for $14.99",
-      calories: "240",
-      image: "/images/dip_breads/F_PBITES.jpg",
-      slug: "cinnamon-bites"
-    },
-    {
       name: "Stuffed Cheesy Bread",
       description: "Oven-baked breadsticks stuffed with cheese and covered in a blend of cheeses made with 100% real mozzarella and cheddar. Try all three varieties.",
-      price: "$7.99 - $8.99",
+      price: "$9.99",
       calories: "150 - 170",
       image: "/images/dip_breads/F_SCBRD.jpg",
       slug: "stuffed-cheesy-bread"
@@ -305,33 +313,17 @@ export default function CategoryPage({ categories }: CategoryPageProps) {
       calories: "Cal: 220",
       image: "/images/salads/F_CCAESAR.jpg",
       slug: "chicken-caesar"
-    },
-    {
-      name: "Five Cheese Mac & Cheese",
-      description: "Creamy macaroni and cheese made with five different cheeses for the ultimate comfort food experience.",
-      price: "$8.99",
-      calories: "Cal: 450",
-      image: "/images/salads/F_GARDEN.jpg", // Temporary placeholder
-      slug: "five-cheese-mac-cheese"
-    },
-    {
-      name: "Spicy Buffalo Mac & Cheese",
-      description: "Macaroni and cheese with a spicy buffalo kick, topped with crispy breadcrumbs and green onions.",
-      price: "$9.99",
-      calories: "Cal: 480",
-      image: "/images/salads/F_GARDEN.jpg", // Temporary placeholder
-      slug: "spicy-buffalo-mac-cheese"
     }
   ];
 
   const dessertsItems = [
     {
-      name: "Cinnamon Bread Twists",
-      description: "Handmade from fresh buttery-tasting dough and baked to a golden brown. Crispy on the outside and soft on the inside. Drizzled with a perfect blend of cinnamon and sugar, and served with a side of sweet icing.",
-      price: "8 for $7.99",
-      calories: "Cal: 250",
-      image: "/images/desserts/F_CINNAT.jpg",
-      slug: "cinnamon-bread-twists"
+      name: "Cinnamon Bites",
+      description: "Oven-baked bread bites handmade from fresh buttery-tasting dough and seasoned with sweet cinnamon and sugar.",
+      price: "16 for $8.99 • 32 for $14.99",
+      calories: "240",
+      image: "/images/dip_breads/F_PBITES.jpg",
+      slug: "cinnamon-bites"
     },
     {
       name: "Chocolate Lava Crunch Cakes",
